@@ -96,7 +96,8 @@ else if (isset($_POST['submit_user']))
 	
 	if ($fehler == false)
 	{
-		include("includes/mysql_config.php");
+		include("includes/mysql_config_my.php");
+		//include("includes/mysql_config.php");
 		
 		$username = $db->real_escape_string($_POST['username']);
 		$password = md5($_POST['password']);

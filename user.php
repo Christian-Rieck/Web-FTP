@@ -8,7 +8,8 @@ if(!isset($_SESSION['web_user_id']) || !isset($_SESSION['web_username']))
 }
 
 include("includes/config.php");
-include("includes/mysql_config.php");
+include("includes/mysql_config_my.php");
+//include("includes/mysql_config.php");
 
 if(isset($_POST['submit_ftp']) && $_POST['server_id'] > 0)
 {
