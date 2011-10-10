@@ -1,0 +1,250 @@
+body {
+	font-family: Tahoma, Verdana, Arial;
+	background: #255c9f url(../images/background.png) repeat-x fixed;
+	font-size: 14px;
+	overflow-y: scroll;
+	padding-bottom: 10px;
+	cursor: default;
+}
+a:hover {
+	text-decoration: none;
+}
+a:visited {
+	color: #000;
+}		
+form, ul {
+	margin: 0px;
+	padding: 0px;
+}
+input[type="button"], input[type="submit"], input[type="file"] {
+	cursor: pointer;
+}
+label {
+	cursor: pointer;
+}
+ul {
+}
+ul li.listdir, ul li.listfile {
+	line-height: 23px;
+	list-style-type: none;
+	cursor: pointer;
+	border-bottom: 1px solid #ccc;
+}
+ul li.listfile .listdiv {
+	float:left; 
+	width: 75%;
+	padding-left: 24px;
+}
+ul li.listdir .listdiv {
+	float:left; 
+	width: 75%;
+	padding-left: 26px;
+}
+ul div.li_hover {
+	cursor: pointer;
+}
+ul div.li_hover:hover {
+	background-color: #dedede;
+	-moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+}
+div.listdiv {
+	background: url(../images/directory.png) left no-repeat;
+	background-position: 2px 1px;
+}
+div.listdiv-files {
+	background: none;
+	float:left; 
+	width: 75%;
+	padding-left: 3px;
+}	
+div.options_right {
+	float: right; 
+	height: 24px; 
+	padding-right: 3px;
+}	
+a img.options, img.options {
+  	border: none;
+  	margin-top: 4px;
+  	cursor: pointer;
+}		
+img.options:hover {
+	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+}
+img.properties {
+	padding: 1px; 
+	margin-left: 2px;
+	float: left; 
+	position: relative; 
+	top: 3px;
+}
+img.properties:hover {
+	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+}
+.multi_delete {
+	display: none;
+	position: relative;
+	top: -3px;
+}	
+#ajaxdiv {
+	position: relative;
+	background: #ededed;
+	margin-top: 20px;
+	text-align: left; 
+	width: 600px;
+	-moz-border-radius: 10px;
+	-moz-box-shadow: 0 0 10px #000;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 0 0 10px #000;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #000;
+	z-index: 10;
+}
+#slider {
+	padding: 10px 0;
+}
+.error {
+	background: #FBE3E4 url(../images/error.gif) no-repeat 3px center;
+	padding: 3px 5px 3px 23px;
+	margin: 5px 10px 10px 10px;
+	color: #8a1f11;
+	border: 1px solid #FBC2C4;
+	text-align: left;
+}
+.success {
+	background: #b1f29d url(../images/success.gif) no-repeat 3px center;
+	padding: 3px 5px 3px 23px;
+	margin: 5px 10px 10px 10px;
+	color: #2e8514;
+	border: 1px solid #2e8514;
+	text-align: left;
+}
+.success .closeNotification, .error .closeNotification {
+	 float: right; 
+	 font-weight: bold;
+	 cursor: pointer;
+}
+#overlay {
+	position: fixed;  
+	top: 0px; 
+	left: 0px;  
+	width: 100%;  
+	height: 100%;  	  
+	-moz-opacity: 0.0;  
+	-khtml-opacity: 0.0;  
+	opacity: 0.0;  
+	background: #000;   
+	z-index: 3000;   
+	display: none;			
+}
+#bottomAction {
+	background: #ededed;
+	text-align: left; 
+	width: 500px;
+	top: -130%;
+	-moz-box-shadow: 0 0 10px #000;
+	-webkit-box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px #000;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	position: relative;
+	padding: 10px 0 20px 0;
+}
+div.tools {
+	cursor: default;
+}
+span.filesize {
+	float: right;
+	color: #b8b8b8;
+	margin-right: 5px;
+}
+ul div.li_hover:hover span.filesize {
+	color: #FFFFFF;
+}
+div.tools_inner {
+	-moz-box-shadow: inset 0 0 8px #000; 
+	-webkit-box-shadow: inset 0 0 8px #000; 
+	box-shadow: inset 0 0 8px #000; 
+	position:relative; 
+	left: -10px; 
+	width: 620px;
+}
+#breadcrumb_menu {
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: #ccc; 
+	background: #fff; 
+	padding: 0 2px;
+	height: 24px;
+	position: relative;
+	z-index: 10;
+	white-space:nowrap;
+	overflow:hidden;
+	direction: rtl;
+}
+#breadcrumb_menu a.breadcrumb {
+	cursor: pointer;
+	height: 24px;
+	line-height: 24px;
+	padding: 3px 15px 3px 8px; 
+	background: url(../images/crumb.png) no-repeat right;
+	position: relative;
+	z-index: 1;
+}
+#breadcrumb_menu a.breadcrumb:hover {
+	color: #255c9f;
+}
+#breadcrumb_menu a.breadcrumb img#bread_home {
+	position: relative; 
+	top: 3px;
+}
+#settings {
+    background: #ededed;
+    position: fixed;
+    top: -130%;
+    width: 60%;
+    margin-left: -30%;
+    left: 50%;
+    padding: 7px;
+    font-size: 12px;
+    z-index: 100;
+    -moz-box-shadow: 0 0 10px #000;
+	-webkit-box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px #000;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+#settings_button {
+    background: #ededed;
+    position: fixed;
+    top: 0;
+    padding: 7px;
+    z-index: 999;
+    -moz-box-shadow: 0 0 10px #000;
+	-webkit-box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px #000;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+#settings_button img:hover {
+    -moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
+	box-shadow: 0 0 3px #000;
+}
