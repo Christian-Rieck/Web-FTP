@@ -1,0 +1,11 @@
+<html>
+
+	<head>
+		<title>Web-FTP :: Login</title>
+		<link rel="stylesheet" type="text/css" href="<?php echo ROOT . "resources/css/" . $this -> _['stylesheet']; ?>">
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>		
+		<script type="text/javascript" src="<?php echo ROOT . "resources/js/" . $this -> _['javascript']; ?>"></script>
+	</head>
+	
+	<body>

@@ -11,8 +11,8 @@ class Controller_default extends Controller {
 				require_once(CONTROLLERS . "login.php");
 				if(class_exists("Controller_Login"))
 				{
-					$login = new Controller_Login();
-					$this -> assign("content", $login -> load());	
+					$login = new Controller_Login($this -> request);
+					$this -> layout -> assign("content", $login -> load());	
 				}
 			}
 		}

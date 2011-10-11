@@ -17,10 +17,12 @@ class Side {
 
 	public function __destruct() {
 		// Testausgabe
+		/*
 		echo "<br><br>";
 		print_r($this -> request);
 		echo "<br><br>";
 		echo $GLOBALS['dp'];
+		*/
 	}
 
 }

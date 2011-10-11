@@ -4,7 +4,7 @@
 define("DS", DIRECTORY_SEPARATOR);
 
 define("PATH", dirname(__FILE__) . DS);
-define("ROOT", DS . "" . DS);
+define("ROOT", "/~christian/_mvc_webftp/");
 
 define("CONTROLLERS", PATH . "controllers" . DS);
 define("MODELS", PATH . "models" . DS);
