@@ -10,6 +10,13 @@ class Side {
 		
 		// Session allgemein starten
 		session_start();
+		header('Content-Type: text/html; charset=utf-8');
+		
+		?>
+		<script type="text/javascript">
+			ROOT = "<?php echo ROOT; ?>";
+		</script>		
+		<?php
 		
 		$GLOBALS['dp'] .= "fehlgeschlagen";
 	

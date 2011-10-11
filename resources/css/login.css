@@ -16,6 +16,10 @@ a:visited {
 	color: #000;
 }
 
+a.href {
+	cursor: pointer;
+}
+
 #login-box {
 	width: 300px;
 	background: #f4f4f4;

@@ -1,22 +1,21 @@
-$(document).ready(function() 
-{
-	//On Click Event
-	$("ul.tabs li a").click(function() 
-	{
-		$("ul.tabs li a").removeClass("active");
-		$(this).addClass("active");
-		$(".tab_content").hide();
-
-		var activeTab = $(this).attr("href");
-		$(activeTab).fadeIn();
-	});
+function loginForm(form) {
 	
-	//On Click Event
-	$("#ssl").click(function() 
+	$.get(ROOT + "Ajax/LoginForm/&form=" + form, function(data)
 	{
-		if($("#ssl").attr("checked") == "checked")
-			$("input[name=port]").attr("placeholder", "993");
-		else
-			$("input[name=port]").attr("placeholder", "21");
-	});
-});
+		$("#form-box").hide();
+		$("#form-box").html(data);
+		$("#form-box").fadeIn();		
+    });
+    
+    if(form == "ftp")
+    {
+    	$("#loginTabFtp").addClass("active");
+    	$("#loginTabUser").removeClass("active");
+    }
+    else
+    {
+    	$("#loginTabUser").addClass("active");
+    	$("#loginTabFtp").removeClass("active");
+    }
+
+}

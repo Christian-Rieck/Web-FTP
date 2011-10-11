@@ -5,13 +5,13 @@
 class Controller_Ajax extends Controller {
 
 	// Auszugebende Sub
-	private $modul = '';
+	private $module = '';
 
 	/**
 	 * Initialisieren des Controllers
 	 */
 	protected function init() {
-		$this -> modul = !empty($this -> request['ajaxmodul']) ? $this -> request['ajaxmodul'] : '';
+		$this -> module = !empty($this -> request['ajaxmodul']) ? $this -> request['ajaxmodul'] : '';
 	}
 
 	/**
@@ -19,8 +19,10 @@ class Controller_Ajax extends Controller {
 	 */
 	public function make() {
 		// Laden des richtigen Controllers
-		$classname = "Controller_" . $this -> modul;
-		$file = CONTROLLERS . $this -> modul . ".php";
+		$classname = "Controller_" . $this -> module;
+		$file = $this -> module . ".php";
+		$file{0} = strtolower($file{0});
+		$file = CONTROLLERS . $file;
 
 		if(file_exists($file)) {
 			require_once ($file);

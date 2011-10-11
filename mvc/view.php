@@ -109,7 +109,7 @@ class View {
 			return $output;
 		} else {
 			// Template-File existiert nicht-> Fehlermeldung.
-			return 'could not find layout';
+			return 'could not find layout' . $file;
 		}
 	}
 

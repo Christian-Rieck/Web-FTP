@@ -1,9 +1,5 @@
-#RewriteEngine On
+RewriteEngine On
 
-#RewriteRule ^ajax/(.*)/(.*)$ index.php?module=ajax&sub=$1&$2
-#RewriteRule ^archive/(.*)/(.*)/(.*)/$ index.php?module=default&year=$1&month=$2&day=$3
-#RewriteRule ^archive/(.*)/(.*)/$ index.php?module=default&year=$1&month=$2
-#RewriteRule ^page/(.*)/$ index.php?module=default&page=$1
-#RewriteRule ^entry/(.*)/$ index.php?module=entry&id=$1
+RewriteRule ^Ajax/(.*)/(.*)$ /~christian/_mvc_webftp/index.php?module=ajax&ajaxmodul=$1&$2
 
-#RewriteRule ^$ index.php
+RewriteRule ^$ /~christian/_mvc_webftp/index.php

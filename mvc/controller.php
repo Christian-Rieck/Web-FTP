@@ -23,9 +23,7 @@ class Controller {
 		$classname = get_class($this);
 
 		if(strpos($classname, "Controller_") == 0)
-			$this -> layout = new View(substr($classname, 11), true);
-		elseif(strpos($classname, "Sub_") == 0)
-			$this -> layout = new View(substr($classname, 4), true);
+			$this -> layout = new View(strtolower($classname{11}) . substr($classname, 12), true); 
 		else
 			$this -> layout = new View("notfound");
 	}

@@ -58,6 +58,9 @@ class MainController {
 		// Laden des richtigen Controllers
 		$classname = "Controller_" . $this -> module;
 		$file = CONTROLLERS . $this -> module . ".php";
+		$file = $this -> module . ".php";
+		$file{0} = strtolower($file{0});
+		$file = CONTROLLERS . $file;
 
 		if(file_exists($file)) {
 			require_once ($file);
