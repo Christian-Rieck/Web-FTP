@@ -4,10 +4,9 @@
 define("DS", DIRECTORY_SEPARATOR);
 
 define("PATH", dirname(__FILE__) . DS);
-define("ROOT", DS . "myBlog" . DS);
+define("ROOT", DS . "" . DS);
 
 define("CONTROLLERS", PATH . "controllers" . DS);
-define("SUBS", PATH . "subs" . DS);
 define("MODELS", PATH . "models" . DS);
 define("LAYOUTS", PATH . "layouts" . DS);
 define("TEMPLATES", PATH . "templates" . DS);

@@ -1,5 +1,5 @@
 <?php
-include (INCLUDES . "mysql.php");
+//include (INCLUDES . "mysql.php");
 include (MVC . "view.php");
 include (MVC . "controller.php");
 include (MVC . "model.php");
@@ -13,6 +13,8 @@ class MainController {
 	private $request = null;
 	// Zu ladender Controller
 	private $module = '';
+	// Objekt für die Seite
+	private $side = null;
 
 	/**
 	 * Konstruktor, erstellet den Controller.
@@ -21,6 +23,15 @@ class MainController {
 	 */
 	public function __construct() {
 		$this -> request = array_merge($_GET, $_POST);
+		
+		// Objekt zum Initialisieren und Deinitialisieren der Seite bereit stellen
+		if(file_exists(INCLUDES . "side.php")) {
+			require_once(INCLUDES . "side.php");
+			
+			if(class_exists("Side"))
+				$this -> side = new Side($this -> request);
+		}
+		
 		$this -> module = !empty($this -> request['module']) ? $this -> request['module'] : 'default';
 
 		echo $this -> display();
@@ -41,7 +52,7 @@ class MainController {
 	/**
 	 * Methode zum anzeigen des Contents.
 	 *
-	 * @return String Content der Applikation.
+	 * @return String Content der Applikation.f
 	 */
 	public function display() {
 		// Laden des richtigen Controllers
@@ -62,7 +73,7 @@ class MainController {
 			} else
 				return "Modul nicht gefunden.";
 		} else
-			return "Datei \"" . $file . "\" nicht vorhanden.";
+			return "Datei \"" . $file . "\" ist nicht vorhanden.";
 	}
 
 }

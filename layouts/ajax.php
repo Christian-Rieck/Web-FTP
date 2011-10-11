@@ -1,1 +1,1 @@
-<?php echo $this->_['content']; ?>
+<?php echo $this -> _['content']; ?>
