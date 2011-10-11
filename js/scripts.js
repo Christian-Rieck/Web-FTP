@@ -434,10 +434,6 @@ function deletest(todelete, curdir, type, num)
 	}
 }
 
-
-
-
-
 function delete_multi(curdir)
 {
 	var multidelete="";

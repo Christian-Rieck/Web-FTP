@@ -19,19 +19,19 @@ if(isset($_POST['submit_ftp']) && $_POST['server_id'] > 0)
 	try
 	{
 		$ftp = FTP::getInstance();
-		
+
 		$ssl = $server[6];
-		
+
 		$config = array( "host" => $server[2],
 				 "port"     => $server[3],
 		 	  	 "username" => $server[4],
 		 		 "password" => $server[5] );
-		
+
 		if($ssl == TRUE)
 			$ftp->connect( $config, true);
 		else
 			$ftp->connect( $config );
-		
+
 		$_SESSION['logged_in'] = true;
 		$_SESSION['domain'] = $server[2];
 		$_SESSION['port'] = $server[3];
@@ -51,7 +51,7 @@ else if(isset($_POST['submit_new_server']))
 {
 	$fehler = false;
 	$fehlermeldung = "";
-	
+
 	if (empty($_POST['domain']))
 	{
 		$fehler = true;
@@ -77,31 +77,31 @@ else if(isset($_POST['submit_new_server']))
 	{
 		$_POST['username'] = "anonymous";
 	}
-	
+
 	if ($fehler == false)
 	{
 		if(empty($_POST['port']))
 			$port = 21;
 		else
 			$port = $_POST['port'];
-		
+
 		if(isset($_POST['ssl']))
 			$ssl = 1;
 		else
-			$ssl = 0;		
-		
+			$ssl = 0;
+
 		$config = array( "host" => $_POST['domain'],
 				 "port"     => $port,
 		 	  	 "username" => $_POST['username'],
 		 		 "password" => $_POST['password'] );
-		 		 
-		$available = $db->query("SELECT * FROM connections WHERE userid = $_SESSION[web_user_id] AND 
+
+		$available = $db->query("SELECT * FROM connections WHERE userid = $_SESSION[web_user_id] AND
 																 domain = '$_POST[domain]' AND
 																 port = $port AND
 																 username = '$_POST[username]' AND
 																 password = '$_POST[password]' AND
 																 connections.ssl = $ssl");
-													
+
 		if($available->num_rows > 0)
 		{
 			$fehler = true;
@@ -113,12 +113,12 @@ else if(isset($_POST['submit_new_server']))
 			try
 			{
 				$ftp = FTP::getInstance();
-				
+
 				if($ssl == TRUE)
 					$ftp->connect( $config, true);
 				else
 					$ftp->connect( $config );
-				
+
 				$_SESSION['logged_in'] = true;
 				$_SESSION['domain'] = $_POST['domain'];
 				$_SESSION['port'] = $port;
@@ -126,9 +126,9 @@ else if(isset($_POST['submit_new_server']))
 				$_SESSION['password'] = $_POST['password'];
 				$_SESSION['ssl'] = $ssl;
 				$_SESSION['ftp_sess'] = serialize($ftp);
-							
+
 				$db->query("INSERT INTO connections VALUES('', $_SESSION[web_user_id], '$_POST[domain]', $port, '$_POST[username]', '$_POST[password]', $ssl)") or die($db->error);
-				
+
 				header('Location: index.php');
 			}
 			catch (FTPException $ftpError)
@@ -147,33 +147,33 @@ $connections = $db->query("SELECT * FROM connections WHERE userid = " . $_SESSIO
 	<head>
 		<title>Web-FTP Userpanel</title>
 		<link rel="stylesheet" type="text/css" href="css/login.css">
-		
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>		
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 		<script type="text/javascript" src="js/settings.js"></script>
 		<script type="text/javascript" src="js/tabs.js"></script>
 	</head>
-	
+
 	<body>
 		<div id="settings_button">
-			<img 
-				src="images/settings.png" 
-				title="<?php echo LANG_SHOW_OPTION_SETTINGS; ?>" 
-				style="cursor: pointer"  
+			<img
+				src="images/settings.png"
+				title="<?php echo LANG_SHOW_OPTION_SETTINGS; ?>"
+				style="cursor: pointer"
 				onclick="settings()" />
 		</div>
 		<div id="settings">
 		</div>
-		
+
 		<center>
 			<div id="login-box">
-			
+
 				<div id="tab_div">
 					<ul class="tabs">
 						<li><a href="#tab_select_server" class="tabs <?php if (isset($_POST['submit_select_server'])) echo "active"; if (!isset($_POST['submit_select_server']) && !isset($_POST['submit_new_server'])) echo "active"; ?>">Server wählen</a></li>
 						<li><a href="#tab_new_server" class="tabs <?php if (isset($_POST['submit_new_server'])) echo "active"; ?>">Neuer Server</a></li>
 					</ul>
 				</div>
-				
+
 				<div id="form-box">
 					<form id="tab_select_server" class="tab_content" method="post" action="user.php">
 						<fieldset>
@@ -185,7 +185,7 @@ $connections = $db->query("SELECT * FROM connections WHERE userid = " . $_SESSIO
 											echo "<div style=\"margin-bottom:10px; color:red; font-size:12px\">" . $fehlermeldung . "</div";
 									?>
 									<label style="cursor: default">Server:</label><br />
-									<select style="width: 220px" name="server_id">
+									<select style="width: 220px" name="server_id" id="serverList" size="10">
 									<?php
 										if($connections->num_rows == 0)
 											echo "<option>Noch kein Server eingetragen!</option>";
@@ -193,18 +193,29 @@ $connections = $db->query("SELECT * FROM connections WHERE userid = " . $_SESSIO
 										{
 											while($list_connections = $connections->fetch_array())
 											{
-												echo "<option value=\"$list_connections[0]\">$list_connections[2]:$list_connections[3] - $list_connections[4]</option>";
+												echo "<option value=\"$list_connections[0]\">";
+												if($list_connections[6] == 1)
+													echo "SSL: ";
+												if(!empty($list_connections[4]))
+													echo $list_connections[4];
+												else
+													echo "Anonym";
+												echo "@" . $list_connections[2] . ":" . $list_connections[3];
+												echo "</option>";
 											}
 										}
 									?>
 									</select>
 								</div>
 								<div style="clear: both"></div>
-								<input type="submit" name="submit_ftp" value="Zu Server verbinden" />
+								<input type="submit" name="submit_ftp" value="Zu Server verbinden" /> <br />
+
+								<span onclick="removeServer($('#serverList').val());">-</span>
+								<span onclick="addServer()">+</span>
 							</div>
 						</fieldset>
 					</form>
-					
+
 					<form id="tab_new_server" class="tab_content" method="post" action="user.php">
 						<fieldset>
 							<legend>Neuer Server</legend>
@@ -215,27 +226,27 @@ $connections = $db->query("SELECT * FROM connections WHERE userid = " . $_SESSIO
 											echo "<div style=\"margin-bottom:10px; color:red; font-size:12px\">" . $fehlermeldung . "</div";
 									?>
 									<label style="cursor: default">(FTP-)Domain:</label><br />
-									<input 
-										type="text" 
-										name="domain" 
-										size="25" 
+									<input
+										type="text"
+										name="domain"
+										size="25"
 										placeholder="www.example.com" />
-									<input 
-										type="text" 
-										name="port" 
-										size="1" 
+									<input
+										type="text"
+										name="port"
+										size="1"
 										placeholder="21" /><br />
 									<label style="cursor: default">Username:</label><br />
-									<input 
-										type="text" 
-										name="username" 
-										size="25" 
+									<input
+										type="text"
+										name="username"
+										size="25"
 										placeholder="Steve Jobs" /><br />
 									<label style="cursor: default">Passwort:</label><br />
-									<input 
-										type="password" 
-										name="password" 
-										size="25" 
+									<input
+										type="password"
+										name="password"
+										size="25"
 										placeholder="••••••••" />
 								</div>
 								<table>
@@ -261,8 +272,15 @@ $connections = $db->query("SELECT * FROM connections WHERE userid = " . $_SESSIO
 							</div>
 						</fieldset>
 					</form>
+					<!-- <a href="#" onclick="bottomNewServer();">test</a> //-->
 				</div>
 			</div>
+
+			<div style="display: none; padding: 10px 0; margin-top: -10px">
+				<div id="bottomAction">
+				</div>
+			</div>
+
 		</center>
 	</body>
 </html>
@@ -271,28 +289,28 @@ $connections = $db->query("SELECT * FROM connections WHERE userid = " . $_SESSIO
 if(isset($_POST['submit_new_server']))
 { ?>
 	<script type="text/javascript">
-		$(document).ready(function() 
+		$(document).ready(function()
 		{
 			$(".tab_content").hide();
-	
+
 			var activeTab = "#tab_new_server";
 			var toHeight = $(activeTab).height();
-					
+
 			$(activeTab).show();
 		});
 	</script>
-<?php 
+<?php
 }
 else
 { ?>
 	<script type="text/javascript">
-		$(document).ready(function() 
+		$(document).ready(function()
 		{
 			$(".tab_content").hide();
-	
+
 			var activeTab = "#tab_select_server";
 			var toHeight = $(activeTab).height();
-					
+
 			$(activeTab).show();
 		});
 	</script>

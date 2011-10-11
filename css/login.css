@@ -27,6 +27,9 @@ a:visited {
 	-webkit-border-radius: 10px;
 	box-shadow: 0 0 10px #000;
 	border-radius: 10px;
+	
+	position: relative;
+	z-index: 10;
 }
 form {
 	text-align: left;
@@ -144,4 +147,22 @@ ul.tabs li > a.active {
     -moz-box-shadow: 0 0 3px #000;
 	-webkit-box-shadow: 0 0 3px #000;
 	box-shadow: 0 0 3px #000;
+}
+
+#bottomAction {
+	background: #ededed;
+	text-align: left; 
+	width: 280px;
+	top: -130%;
+	-moz-box-shadow: 0 0 10px #000;
+	-webkit-box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px #000;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	position: relative;
+	padding: 10px 0 20px 0;
 }
