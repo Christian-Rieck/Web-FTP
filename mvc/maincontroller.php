@@ -25,8 +25,8 @@ class MainController {
 		$this -> request = array_merge($_GET, $_POST);
 		
 		// Objekt zum Initialisieren und Deinitialisieren der Seite bereit stellen
-		if(file_exists(INCLUDES . "side.php")) {
-			require_once(INCLUDES . "side.php");
+		if(file_exists(CLASSES . "side.class.php")) {
+			require_once(CLASSES . "side.class.php");
 			
 			if(class_exists("Side"))
 				$this -> side = new Side($this -> request);
