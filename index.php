@@ -1,8 +1,8 @@
 <?php
 // Konfiguration einbinden
-include ("config.php");
+require_once ("config.php");
 // unsere Klassen einbinden
-include (MVC . "maincontroller.php");
+require_once (MVC . "maincontroller.php");
 
 // Laden des Inhalts
 new MainController();

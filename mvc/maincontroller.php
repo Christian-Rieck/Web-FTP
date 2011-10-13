@@ -1,5 +1,5 @@
 <?php
-//include (INCLUDES . "mysql.php");
+include (CLASSES . "mysql.php");
 include (MVC . "view.php");
 include (MVC . "controller.php");
 include (MVC . "model.php");

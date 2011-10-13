@@ -17,8 +17,8 @@ define("RESOURCES", PATH . "resources" . DS);
 
 // SQL-Server Parameter
 define("SQL_SERVER", "localhost");
-define("SQL_DATABASE", "myBlog");
-define("SQL_USER", "myBlog");
-define("SQL_PASSWORD", "password");
+define("SQL_DATABASE", "webftp");
+define("SQL_USER", "root");
+define("SQL_PASSWORD", "root");
 
 ?>
