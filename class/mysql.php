@@ -54,6 +54,16 @@ class DB {
 
 		return $out;
 	}
+	
+	/**
+	 * Datensätze zählen
+	 *
+	 * @param Array $result Ergebnis der Abfrage
+	 * @return Int Anzahl der Datensätze
+	 */
+	public function num_rows($result) {
+		return $result -> num_rows;
+	}
 
 }
 

@@ -37,12 +37,13 @@ class Side {
 
 	public function __destruct() {
 		// Testausgabe
-		/*
-		echo "<br><br>";
-		print_r($this -> request);
-		echo "<br><br>";
-		echo $GLOBALS['dp'];
-		*/
+		
+		echo "<div style='text-align:left'><pre>";
+		var_dump($this -> request);
+		echo "</pre></div>";
+		//echo $GLOBALS['dp'];
+		
+		
 	}
 
 }

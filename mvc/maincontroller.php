@@ -1,8 +1,8 @@
 <?php
-include (CLASSES . "mysql.php");
-include (MVC . "view.php");
-include (MVC . "controller.php");
-include (MVC . "model.php");
+require_once (CLASSES . "mysql.php");
+require_once (MVC . "view.php");
+require_once (MVC . "controller.php");
+require_once (MVC . "model.php");
 
 /**
  * Hauptcontroller zum laden des gewünschten Controllers

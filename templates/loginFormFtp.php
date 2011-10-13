@@ -1,4 +1,4 @@
-					<form id="tab_ftp" class="tab_content" method="post" action="login.php">
+					<form id="tab_ftp" class="tab_content" method="post">
 						<fieldset>
 							<legend>Web-FTP :: Login</legend>
 							<div id="login">
