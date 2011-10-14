@@ -1,3 +1,4 @@
+/* Allgemeine Styles */
 * {
 	font-size: 14px;
 }
@@ -9,6 +10,8 @@ body {
 	padding-bottom: 10px;
 	cursor: default;
 }
+
+/* Link Styles */
 a:hover {
 	text-decoration: none;
 }
@@ -18,12 +21,15 @@ a:visited {
 a.href {
 	cursor: pointer;
 }
+
+/* Allgemeine Klassen */
 .right {
 	float: right;
 }
-
-#login-box {
-	width: 300px;
+ 
+/* Login Box (Das äußerste Div) */
+#loginBox {
+	width: 280px;
 	background: #f4f4f4;
 	padding: 0 15px 5px 15px;
 	margin-top: 150px;
@@ -33,160 +39,190 @@ a.href {
 	-webkit-border-radius: 10px;
 	box-shadow: 0 0 10px #000;
 	border-radius: 10px;
-	
 	position: relative;
 	z-index: 10;
 }
-form {
-	text-align: left;
-}
-label {
-	cursor: pointer;
-}
-#login {
-	margin: 10px 5px 5px 20px;
-}
-#login-form input {
-	height: 25px;
-	margin: 4px 0;
-	border: 1px solid #8a8a8a;
-	padding: 3px 3px 3px 5px;
-	cursor: pointer;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
 
-#login-form input.error {
-	border: 1px solid red;
-	-moz-box-shadow: 0 0 4px red, inset 0 0 1px red;
-	-webkit-box-shadow: 0 0 4px red, inset 0 0 1px red;
-	box-shadow: 0 0 4px red, inset 0 0 1px red;
-}
-#login-form .loginError {
-	color:red; 
-	font-size:12px;
-	margin-bottom: 7px;
-}
-#login-form input:hover {
-	border: 1px solid #4a99e3;
-}
-#login-form input:focus {
-	background: #e5f2ff;
-	border: 1px solid #4a99e3;
-	-moz-box-shadow: 0 0 5px #c1e5ff;
-	-webkit-box-shadow: 0 0 5px #c1e5ff;
-	box-shadow: 0 0 5px #c1e5ff;
-	outline: none;
-}
-#login-form input.error:hover, #login-form input.error:focus {
-	background: #FFF;
-	border: 1px solid red;
-	-moz-box-shadow: 0 0 7px red, inset 0 0 1px red;
-	-webkit-box-shadow: 0 0 7px red, inset 0 0 1px red;
-	box-shadow: 0 0 7px red, inset 0 0 1px red;
-}
-#login-form input[type=submit]:focus {
-	-moz-box-shadow: inset 0 0 3px #9d9d9d;
-	-webkit-box-shadow: inset 0 0 3px #9d9d9d;
-	box-shadow: inset 0 0 3px #9d9d9d;
-}
+	/* Div, welches die Tabs als Buttons enthält */
+	#tabDiv {
+		margin-bottom: 10px;
+	}
+		/* Liste innerhalb des Divs */
+		#tabDiv ul.tabs {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+			/* List Elemente innerhalb der Liste */
+			#tabDiv ul.tabs li {
+				background: #d6eaff;
+				display: inline-block;
+				margin: 0 5px;
+				border-width: 0 1px 1px 1px;
+				border-color: #8aceff;
+				border-style: solid;
+				border-radius: 0 0 5px 5px;
+			}
+				/* Links innerhalb der List Elemente */
+				#tabDiv ul.tabs li a {
+					color: #000;
+					padding: 3px 12px;
+					display: block;
+					border-width: 0 1px 1px 1px;
+					border-color: #FFF;
+					border-style: solid;
+					border-radius: 0 0 5px 5px;
+				}
+				/* Link des aktiven Tabs */
+				#tabDiv ul.tabs li a.active {
+					color: #FFF;
+				}
+				/* Hintergrundfarbe des aktiven Tabs */
+				#tabDiv ul.tabs li > a.active {
+					background: #8aceff;
+				}
 
-#tab_div {
-	margin-bottom: 10px;
-}
-ul.tabs {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-ul.tabs li {
-	background: #d6eaff;
-	display: inline-block;
-	margin: 0 5px;
-	border-width: 0 1px 1px 1px;
-	border-color: #8aceff;
-	border-style: solid;
-	border-radius: 0 0 5px 5px;
-}
-ul.tabs li a {
-	text-decoration: none;
-	color: #000;
-	padding: 3px 12px;
-	display: block;
-	border-width: 0 1px 1px 1px;
-	border-color: #FFF;
-	border-style: solid;
-	border-radius: 0 0 5px 5px;
-}
-ul.tabs li a.active {
-	text-decoration: none;
-	color: #FFF;
-	padding: 3px 12px;
-	display: block;
-}
-ul.tabs li > a.active {
-	background: #8aceff;
-}
+	/* Formular für Login */
+	form {
+		text-align: left;
+	}
+	label.pointer {
+		cursor: pointer;
+	}
+		/* Dv innerhalb des Formulars */
+		#login {
+			margin: 10px;
+		}
+			/* Input Buttons */
+			#login input[type=submit] {
+				cursor: pointer;
+				margin-top: 10px;
+			}			
+			/* Input Felder der Klasse text (alle Text Input-Felder) */
+			#login input.text {
+				height: 25px;
+				margin: 4px 0;
+				border: 1px solid #8a8a8a;
+				padding: 3px 3px 3px 5px;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+			}
+				/* Hover Effekt für diese Input-Felder */
+				#login input.text:hover {
+					border: 1px solid #4a99e3;
+					cursor: pointer;
+				}
+				/* Focus Effekt für die Input-Felder */
+				#login input.text:focus {
+					background: #e5f2ff;
+					border: 1px solid #4a99e3;
+					-moz-box-shadow: 0 0 5px #c1e5ff;
+					-webkit-box-shadow: 0 0 5px #c1e5ff;
+					box-shadow: 0 0 5px #c1e5ff;
+					outline: none;
+				}
+				
+			/* Div oben innerhalb des Formulars für allgemeine Fehler */
+			#login div.error {
+				background: #FBE3E4 url(../images/error.gif) no-repeat 5px center;
+				color: #8a1f11;
+				border: 1px solid #FBC2C4;
+				text-align: left;
+				margin-bottom: 10px;
+			}
+				#login div.error p {
+					padding: 3px 5px 3px 25px;
+					margin: 0;
+				}
+				
+			/* Texte unterhalb eines Input Feldes (Text) bei Fehleingabe */
+			#login .loginError {
+				color:red; 
+				font-size:12px;
+				margin-bottom: 7px;
+			}
+			/* Input Felder (Text) bei Fehleingabe */
+			#login input.error {
+				border: 1px solid red;
+				-moz-box-shadow: 0 0 4px red, inset 0 0 1px red;
+				-webkit-box-shadow: 0 0 4px red, inset 0 0 1px red;
+				box-shadow: 0 0 4px red, inset 0 0 1px red;
+			}
+			/* Hover und Focus Effekt für Text-Input Felder bei Fehleingabe */
+			#login input.error:hover, #login-form input.error:focus {
+				background: #FFF;
+				border: 1px solid red;
+				-moz-box-shadow: 0 0 7px red, inset 0 0 1px red;
+				-webkit-box-shadow: 0 0 7px red, inset 0 0 1px red;
+				box-shadow: 0 0 7px red, inset 0 0 1px red;
+			}
 
-#settings {
-    background: #ededed;
-    position: fixed;
-    top: -130%;
-    width: 60%;
-    margin-left: -30%;
-    left: 50%;
-    padding: 7px;
-    z-index: 100;
-    -moz-box-shadow: 0 0 10px #000;
-	-webkit-box-shadow: 0 0 10px #000;
-	box-shadow: 0 0 10px #000;
-	-webkit-border-bottom-right-radius: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-#settings a {
-	font-size: 12px;
-}
-#settings_button {
-    background: #ededed;
-    position: fixed;
-    top: 0;
-    padding: 7px;
-    z-index: 999;
-    -moz-box-shadow: 0 0 10px #000;
-	-webkit-box-shadow: 0 0 10px #000;
-	box-shadow: 0 0 10px #000;
-	-webkit-border-bottom-right-radius: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-#settings_button img:hover {
-    -moz-box-shadow: 0 0 3px #000;
-	-webkit-box-shadow: 0 0 3px #000;
-	box-shadow: 0 0 3px #000;
-}
 
-#bottomAction {
-	background: #ededed;
-	text-align: left; 
-	width: 280px;
-	top: -130%;
-	-moz-box-shadow: 0 0 10px #000;
-	-webkit-box-shadow: 0 0 10px #000;
-	box-shadow: 0 0 10px #000;
-	-webkit-border-bottom-right-radius: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	position: relative;
-	padding: 10px 0 20px 0;
-}
+/* 
+ * Noch nicht benötigt
+ *
+ 
+	#settings {
+	    background: #ededed;
+	    position: fixed;
+	    top: -130%;
+	    width: 60%;
+	    margin-left: -30%;
+	    left: 50%;
+	    padding: 7px;
+	    z-index: 100;
+	    -moz-box-shadow: 0 0 10px #000;
+		-webkit-box-shadow: 0 0 10px #000;
+		box-shadow: 0 0 10px #000;
+		-webkit-border-bottom-right-radius: 10px;
+		-webkit-border-bottom-left-radius: 10px;
+		-moz-border-radius-bottomright: 10px;
+		-moz-border-radius-bottomleft: 10px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+	#settings a {
+		font-size: 12px;
+	}
+	#settings_button {
+	    background: #ededed;
+	    position: fixed;
+	    top: 0;
+	    padding: 7px;
+	    z-index: 999;
+	    -moz-box-shadow: 0 0 10px #000;
+		-webkit-box-shadow: 0 0 10px #000;
+		box-shadow: 0 0 10px #000;
+		-webkit-border-bottom-right-radius: 10px;
+		-webkit-border-bottom-left-radius: 10px;
+		-moz-border-radius-bottomright: 10px;
+		-moz-border-radius-bottomleft: 10px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+	#settings_button img:hover {
+	    -moz-box-shadow: 0 0 3px #000;
+		-webkit-box-shadow: 0 0 3px #000;
+		box-shadow: 0 0 3px #000;
+	}
+	
+	#bottomAction {
+		background: #ededed;
+		text-align: left; 
+		width: 280px;
+		top: -130%;
+		-moz-box-shadow: 0 0 10px #000;
+		-webkit-box-shadow: 0 0 10px #000;
+		box-shadow: 0 0 10px #000;
+		-webkit-border-bottom-right-radius: 10px;
+		-webkit-border-bottom-left-radius: 10px;
+		-moz-border-radius-bottomright: 10px;
+		-moz-border-radius-bottomleft: 10px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		position: relative;
+		padding: 10px 0 20px 0;
+	}
+
+*/

@@ -2,9 +2,9 @@ function loginForm(form) {
 	
 	$.get(ROOT + "Ajax/LoginForm/&form=" + form, function(data)
 	{
-		$("#form-box").hide();
-		$("#form-box").html(data);
-		$("#form-box").fadeIn();		
+		$("#formBox").hide();
+		$("#formBox").html(data);
+		$("#formBox").fadeIn();		
     });
     
     if(form == "ftp")

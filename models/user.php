@@ -19,7 +19,7 @@ class Model_User extends Model {
 			FROM
 				users
 			WHERE
-				username = '" . $username . "' 
+				username = '" . $this -> db -> escape ($username) . "' 
 				AND password = '" . $password . "'";
 				
 		if($result = $this -> db -> query($sql))

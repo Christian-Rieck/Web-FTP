@@ -112,6 +112,7 @@ define("LANG_LOGIN", "Einloggen");
 define("LANG_LOGIN_ERR_NO_DOMAIN", "Sie müssen eine Domain angeben!");
 define("LANG_LOGIN_ERR_NO_USER", "Sie müssen einen Benutzernamen angeben!");
 define("LANG_LOGIN_ERR_NO_PASSWORD", "Sie müssen ein Passwort angeben!");
+define("LANG_LOGIN_ERR_BAD_USER_OR_PASSWORD", "Der Benutzername oder das Passwort ist falsch!");
 
 /* -----------------------------------*/
 /* -------->>> PROPERTIES <<<---------*/

@@ -64,6 +64,16 @@ class DB {
 	public function num_rows($result) {
 		return $result -> num_rows;
 	}
+	
+	/**
+	 * Variable escapen
+	 *
+	 * @param String $var Variable zum Escapen
+	 * @return String Escapte Variable
+	 */
+	public function escape($var) {
+		return $this -> mysqli -> real_escape_string($var);
+	}
 
 }
 
