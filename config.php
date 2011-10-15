@@ -20,5 +20,5 @@ define("SQL_SERVER", "");
 define("SQL_DATABASE", "");
 define("SQL_USER", "");
 define("SQL_PASSWORD", "");
-
+// blubber
 ?>
