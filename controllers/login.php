@@ -9,6 +9,7 @@ class Controller_Login extends Controller {
 		$footer = new View('footer');
 		
 		// Header festlegen
+		$header -> assign('headerTitle', "Web-FTP :: Login");
 		$header -> assign('stylesheet', "login.css");
 		$header -> assign('javascript', "login.js");
 		
