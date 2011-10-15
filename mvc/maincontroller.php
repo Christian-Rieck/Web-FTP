@@ -1,5 +1,5 @@
 <?php
-require_once (CLASSES . "mysql.php");
+require_once (CLASSES . "mysql.class.php");
 require_once (MVC . "view.php");
 require_once (MVC . "controller.php");
 require_once (MVC . "model.php");

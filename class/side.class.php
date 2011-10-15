@@ -41,6 +41,7 @@ class Side {
 		echo "<div style='text-align:left'><pre>";
 		var_dump($this -> request);
 		echo "</pre></div>";
+		
 		//echo $GLOBALS['dp'];
 		
 		

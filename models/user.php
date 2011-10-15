@@ -21,12 +21,50 @@ class Model_User extends Model {
 			WHERE
 				username = '" . $this -> db -> escape ($username) . "' 
 				AND password = '" . $password . "'";
-				
-		if($result = $this -> db -> query($sql))
-			return $this -> db -> num_rows($result) == 1;
-		else 
-			return false;
+		
+		return ($result = $this -> db -> query($sql)) && $this -> db -> num_rows($result) == 1;
 	}
+	
+	/**
+	 * Prüfen ob ein bestimmter Benutzername existiert
+	 *
+	 * @param string $username Zu prüfenden Benutzername
+	 *
+	 * @return Bool Benutzer existiert
+	 */
+	public function userExists($username) {
+		$sql = "
+			SELECT
+				username
+			FROM
+				users
+			WHERE
+				username = '" . $this -> db -> escape ($username) . "'";
+		
+		return ($result = $this -> db -> query($sql)) && $this -> db -> num_rows($result) > 0;
+	}
+	
+	/**
+	 * Anlegen eines neuen Users
+	 *
+	 * @param string $username Neuer Benutzername
+	 * @param string $password Zugehöriges Passwort als MD5
+	 *
+	 * @return Bool Erfolgreich eingetragen
+	 */
+	public function addUser($username, $password) {
+		$sql = "
+			INSERT INTO
+				users
+			VALUES (
+				''
+				, '" . $this -> db -> escape ($username) . "'
+				, '" . $this -> db -> escape ($password) . "'
+				)";
+		
+		return ($result = $this -> db -> query($sql));
+	}
+
 }
 
 ?>

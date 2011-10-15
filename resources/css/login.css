@@ -26,10 +26,13 @@ a.href {
 .right {
 	float: right;
 }
+.13 {
+	font-size: 13px;
+}
  
 /* Login Box (Das äußerste Div) */
 #loginBox {
-	width: 280px;
+	width: 260px;
 	background: #f4f4f4;
 	padding: 0 15px 5px 15px;
 	margin-top: 150px;
@@ -45,7 +48,7 @@ a.href {
 
 	/* Div, welches die Tabs als Buttons enthält */
 	#tabDiv {
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 		/* Liste innerhalb des Divs */
 		#tabDiv ul.tabs {
@@ -107,6 +110,7 @@ a.href {
 				-moz-border-radius: 5px;
 				-webkit-border-radius: 5px;
 				border-radius: 5px;
+				width: 100%;
 			}
 				/* Hover Effekt für diese Input-Felder */
 				#login input.text:hover {
@@ -142,20 +146,27 @@ a.href {
 				font-size:12px;
 				margin-bottom: 7px;
 			}
+			/* Texte unterhalb eines Input Feldes (Text) bei Fehleingabe */
+			#login .loginSuccess {
+				color:green; 
+				font-size:14px;
+				margin-bottom: 7px;
+			}
 			/* Input Felder (Text) bei Fehleingabe */
 			#login input.error {
-				border: 1px solid red;
-				-moz-box-shadow: 0 0 4px red, inset 0 0 1px red;
-				-webkit-box-shadow: 0 0 4px red, inset 0 0 1px red;
-				box-shadow: 0 0 4px red, inset 0 0 1px red;
+				background: #FFF !important;
+				border: 1px solid red !important;
+				-moz-box-shadow: 0 0 4px red, inset 0 0 1px red !important;
+				-webkit-box-shadow: 0 0 4px red, inset 0 0 1px red !important;
+				box-shadow: 0 0 4px red, inset 0 0 1px red !important;
 			}
 			/* Hover und Focus Effekt für Text-Input Felder bei Fehleingabe */
 			#login input.error:hover, #login-form input.error:focus {
 				background: #FFF;
 				border: 1px solid red;
-				-moz-box-shadow: 0 0 7px red, inset 0 0 1px red;
-				-webkit-box-shadow: 0 0 7px red, inset 0 0 1px red;
-				box-shadow: 0 0 7px red, inset 0 0 1px red;
+				-moz-box-shadow: 0 0 7px red, inset 0 0 1px red !important;
+				-webkit-box-shadow: 0 0 7px red, inset 0 0 1px red !important;
+				box-shadow: 0 0 7px red, inset 0 0 1px red !important;
 			}
 
 

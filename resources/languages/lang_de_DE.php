@@ -103,16 +103,27 @@ define("LANG_ACTION_CHMOD_FAIL_NO_AUTHORIZATION", "Fehler beim Ändern der Berec
 define("LANG_ACTION_SETTINGS_SAVE_SUCCESS", "Die Einstellungen wurden erfolgreich gespeichert!");
 
 /* -----------------------------------*/
-/* ----------->>> LOGIN <<<-----------*/
+/* ----->>> LOGIN / REGISTER <<<------*/
 /* -----------------------------------*/
 
 define("LANG_ANONYMOUS_LOGIN", "Anonym anmelden");
 define("LANG_SSL_LOGIN", "SSL Verbindung");
 define("LANG_LOGIN", "Einloggen");
+define("LANG_REGISTER", "Registrieren");
 define("LANG_LOGIN_ERR_NO_DOMAIN", "Sie müssen eine Domain angeben!");
 define("LANG_LOGIN_ERR_NO_USER", "Sie müssen einen Benutzernamen angeben!");
 define("LANG_LOGIN_ERR_NO_PASSWORD", "Sie müssen ein Passwort angeben!");
-define("LANG_LOGIN_ERR_BAD_USER_OR_PASSWORD", "Der Benutzername oder das Passwort ist falsch!");
+
+define("LANG_REGISTER_ERR_NO_USER", "Sie müssen einen Benutzernamen angeben!");
+define("LANG_REGISTER_ERR_NO_PASSWORD", "Sie müssen ein Passwort angeben!");
+define("LANG_REGISTER_ERR_NO_PASSWORD_REPEAT", "Sie müssen das Passwort wiederholen!");
+define("LANG_REGISTER_ERR_PASSWORD_UNEQUAL", "Die Passwörter stimmen nicht überein!");
+define("LANG_REGISTER_ERR_BAD_USER_OR_PASSWORD", "Der Benutzername oder das Passwort ist falsch!");
+define("LANG_REGISTER_ERR_USERNAME_TO_SHORT", "Der Benutzername muss mindestens 3 Stellen lang sein!");
+define("LANG_REGISTER_ERR_PASSWORD_TO_SHORT", "Das Passwort muss mindestens 6 Stellen lang sein!");
+define("LANG_REGISTER_ERR_USERNAME_EXISTS", "Der Benutzername existiert bereits!");
+define("LANG_REGISTER_SUCCESS", "Die Registrierung war erfolgreich!");
+define("LANG_REGISTER_FAILED", "Fehler bei der Registrierung!");
 
 /* -----------------------------------*/
 /* -------->>> PROPERTIES <<<---------*/

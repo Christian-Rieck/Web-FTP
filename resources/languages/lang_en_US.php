@@ -103,16 +103,27 @@ define("LANG_ACTION_CHMOD_FAIL_NO_AUTHORIZATION", "Error while changing the auth
 define("LANG_ACTION_SETTINGS_SAVE_SUCCESS", "The settings were successfully saved!");
 
 /* -----------------------------------*/
-/* ----------->>> LOGIN <<<-----------*/
+/* ----->>> LOGIN / REGISTER <<<------*/
 /* -----------------------------------*/
 
 define("LANG_ANONYMOUS_LOGIN", "Anonymous login");
 define("LANG_SSL_LOGIN", "SSL connection");
 define("LANG_LOGIN", "Login");
+define("LANG_REGISTER", "Register");
 define("LANG_LOGIN_ERR_NO_DOMAIN", "You must enter a domain!");
 define("LANG_LOGIN_ERR_NO_USER", "You must enter a username!");
 define("LANG_LOGIN_ERR_NO_PASSWORD", "You must enter a password!");
-define("LANG_LOGIN_ERR_BAD_USER_OR_PASSWORD", "You entered a wrong username or password!");
+
+define("LANG_REGISTER_ERR_NO_USER", "You must enter a username!");
+define("LANG_REGISTER_ERR_NO_PASSWORD", "You must enter a password!");
+define("LANG_REGISTER_ERR_NO_PASSWORD_REPEAT", "You must repeat your password!");
+define("LANG_REGISTER_ERR_PASSWORD_UNEQUAL", "Your passwords are not equal!");
+define("LANG_REGISTER_ERR_BAD_USER_OR_PASSWORD", "You entered a wrong username or password!");
+define("LANG_REGISTER_ERR_USERNAME_TO_SHORT", "The username must be at least 3 signs long!");
+define("LANG_REGISTER_ERR_PASSWORD_TO_SHORT", "The password must be at least 6 signs long!");
+define("LANG_REGISTER_ERR_USERNAME_EXISTS", "This username is already chosen!");
+define("LANG_REGISTER_SUCCESS", "Successfully registered!");
+define("LANG_REGISTER_FAILED", "Error while registering!");
 
 /* -----------------------------------*/
 /* -------->>> PROPERTIES <<<---------*/

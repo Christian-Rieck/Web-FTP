@@ -11,10 +11,18 @@ function loginForm(form) {
     {
     	$("#loginTabFtp").addClass("active");
     	$("#loginTabUser").removeClass("active");
+    	$("#loginTabRegister").removeClass("active");
+    }
+    else if(form == "user")
+    {
+    	$("#loginTabUser").addClass("active");
+    	$("#loginTabFtp").removeClass("active");
+    	$("#loginTabRegister").removeClass("active");
     }
     else
     {
-    	$("#loginTabUser").addClass("active");
+    	$("#loginTabRegister").addClass("active");
+    	$("#loginTabUser").removeClass("active");
     	$("#loginTabFtp").removeClass("active");
     }
 
