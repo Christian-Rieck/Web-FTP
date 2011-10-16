@@ -1,7 +1,7 @@
 RewriteEngine On
 
-RewriteRule ^Ajax/(.*)/(.*)$ /~christian/_mvc_webftp/index.php?module=ajax&ajaxmodul=$1&$2
+RewriteRule ^Ajax/(.*)/(.*)$ index.php?module=ajax&ajaxmodul=$1&$2
 
-RewriteRule ^User$ /~christian/_mvc_webftp/index.php?module=user
+RewriteRule ^User$ index.php?module=user
 
-RewriteRule ^$ /~christian/_mvc_webftp/index.php
+RewriteRule ^$ index.php
