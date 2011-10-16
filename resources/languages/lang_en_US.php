@@ -113,12 +113,12 @@ define("LANG_REGISTER", "Register");
 define("LANG_LOGIN_ERR_NO_DOMAIN", "You must enter a domain!");
 define("LANG_LOGIN_ERR_NO_USER", "You must enter a username!");
 define("LANG_LOGIN_ERR_NO_PASSWORD", "You must enter a password!");
+define("LANG_LOGIN_ERR_BAD_USER_OR_PASSWORD", "You entered a wrong username or password!");
 
 define("LANG_REGISTER_ERR_NO_USER", "You must enter a username!");
 define("LANG_REGISTER_ERR_NO_PASSWORD", "You must enter a password!");
 define("LANG_REGISTER_ERR_NO_PASSWORD_REPEAT", "You must repeat your password!");
 define("LANG_REGISTER_ERR_PASSWORD_UNEQUAL", "Your passwords are not equal!");
-define("LANG_REGISTER_ERR_BAD_USER_OR_PASSWORD", "You entered a wrong username or password!");
 define("LANG_REGISTER_ERR_USERNAME_TO_SHORT", "The username must be at least 3 signs long!");
 define("LANG_REGISTER_ERR_PASSWORD_TO_SHORT", "The password must be at least 6 signs long!");
 define("LANG_REGISTER_ERR_USERNAME_EXISTS", "This username is already chosen!");

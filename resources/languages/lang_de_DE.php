@@ -113,12 +113,12 @@ define("LANG_REGISTER", "Registrieren");
 define("LANG_LOGIN_ERR_NO_DOMAIN", "Sie müssen eine Domain angeben!");
 define("LANG_LOGIN_ERR_NO_USER", "Sie müssen einen Benutzernamen angeben!");
 define("LANG_LOGIN_ERR_NO_PASSWORD", "Sie müssen ein Passwort angeben!");
+define("LANG_LOGIN_ERR_BAD_USER_OR_PASSWORD", "Der Benutzername oder das Passwort ist falsch!");
 
 define("LANG_REGISTER_ERR_NO_USER", "Sie müssen einen Benutzernamen angeben!");
 define("LANG_REGISTER_ERR_NO_PASSWORD", "Sie müssen ein Passwort angeben!");
 define("LANG_REGISTER_ERR_NO_PASSWORD_REPEAT", "Sie müssen das Passwort wiederholen!");
 define("LANG_REGISTER_ERR_PASSWORD_UNEQUAL", "Die Passwörter stimmen nicht überein!");
-define("LANG_REGISTER_ERR_BAD_USER_OR_PASSWORD", "Der Benutzername oder das Passwort ist falsch!");
 define("LANG_REGISTER_ERR_USERNAME_TO_SHORT", "Der Benutzername muss mindestens 3 Stellen lang sein!");
 define("LANG_REGISTER_ERR_PASSWORD_TO_SHORT", "Das Passwort muss mindestens 6 Stellen lang sein!");
 define("LANG_REGISTER_ERR_USERNAME_EXISTS", "Der Benutzername existiert bereits!");
