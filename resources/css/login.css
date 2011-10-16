@@ -26,9 +26,6 @@ a.href {
 .right {
 	float: right;
 }
-.13 {
-	font-size: 13px;
-}
  
 /* Login Box (Das äußerste Div) */
 #loginBox {
@@ -129,16 +126,37 @@ a.href {
 				
 			/* Div oben innerhalb des Formulars für allgemeine Fehler */
 			#login div.error {
-				background: #FBE3E4 url(../images/error.gif) no-repeat 5px center;
+				background: #FBE3E4 url(../images/error.gif) no-repeat 4px center;
 				color: #8a1f11;
 				border: 1px solid #FBC2C4;
 				text-align: left;
-				margin-bottom: 10px;
+				padding: 3px 5px 3px 25px;
+				margin: 5px 0 10px 0;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+				font-size: 13px;
 			}
-				#login div.error p {
-					padding: 3px 5px 3px 25px;
-					margin: 0;
-				}
+			#login div.success {
+				background: #b1f29d url(../images/success.gif) no-repeat 3px center;
+				color: #2e8514;
+				border: 1px solid #2e8514;
+				text-align: left;
+				padding: 3px 5px 3px 25px;
+				margin: 5px 0 10px 0;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+				font-size: 13px;
+			}
+			#login div.success ul, #login div.error ul {
+				padding-left: 17px;
+				margin: 4px 0;
+			}
+			#login div.success ul li, #login div.error ul li {
+				font-size: 13px;
+				margin: 2px 0;
+			}
 				
 			/* Texte unterhalb eines Input Feldes (Text) bei Fehleingabe */
 			#login .loginError {

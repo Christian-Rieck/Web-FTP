@@ -23,27 +23,16 @@ class Side {
 			setcookie("language", $lang, time()+(3600*24*365));
 		}
 		require_once(RESOURCES . "languages/lang_" . $lang . ".php");
-		
-		
-		?>
-		<script type="text/javascript">
-			ROOT = "<?php echo ROOT; ?>";
-		</script>		
-		<?php
-		
-		$GLOBALS['dp'] .= "fehlgeschlagen";
-	
 	}
 
 	public function __destruct() {
 		// Testausgabe
 		
-		echo "<div style='text-align:left'><pre>";
-		var_dump($this -> request);
-		echo "</pre></div>";
+		//echo "<div style='text-align:left'><pre>";
+		//var_dump($this -> request);
+		//echo "</pre></div>";
 		
 		//echo $GLOBALS['dp'];
-		
 		
 	}
 

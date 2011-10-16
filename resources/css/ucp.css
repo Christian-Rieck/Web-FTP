@@ -1,0 +1,28 @@
+/* Allgemeine Styles */
+* {
+	font-size: 14px;
+}
+body {
+	font-family: Tahoma, Verdana, Arial;
+	background: #255c9f url(../images/background.png) repeat-x fixed;
+	font-size: 14px;
+	overflow-y: scroll;
+	padding-bottom: 10px;
+	cursor: default;
+}
+
+/* Link Styles */
+a:hover {
+	text-decoration: none;
+}
+a:visited {
+	color: #000;
+}
+a.href {
+	cursor: pointer;
+}
+
+/* Allgemeine Klassen */
+.right {
+	float: right;
+}

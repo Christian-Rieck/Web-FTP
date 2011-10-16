@@ -61,11 +61,10 @@ class Controller_LoginForm extends Controller {
 							$user = new Model_User();
 							
 							if($user -> checkLogin($username, md5($password)))
-							{}
+								if($user -> login($username))
+									header("Location: User");
 							else
-							{
 								$view -> assign('loginFailed', true);
-							}
 						}
 					}
 				}
@@ -85,7 +84,7 @@ class Controller_LoginForm extends Controller {
 				$fehler = false;
 				$fehlerUser = false;
 				
-				// Leere Eingabefelder abfangen
+				// Leeren Benutzernamen abfangen
 				if(empty($username))
 				{
 					$fehler = $fehlerUser = true;
@@ -93,6 +92,7 @@ class Controller_LoginForm extends Controller {
 				}
 				else
 				{
+					// Zu kurzen Benutzernamen abfangen
 					if(strlen($username) < 3)
 					{
 						$fehler = $fehlerUser = true;

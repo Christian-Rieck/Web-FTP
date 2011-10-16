@@ -110,11 +110,13 @@ define("LANG_ANONYMOUS_LOGIN", "Anonymous login");
 define("LANG_SSL_LOGIN", "SSL connection");
 define("LANG_LOGIN", "Login");
 define("LANG_REGISTER", "Register");
+define("LANG_LOGIN_ERR", "Login failed:");
 define("LANG_LOGIN_ERR_NO_DOMAIN", "You must enter a domain!");
 define("LANG_LOGIN_ERR_NO_USER", "You must enter a username!");
 define("LANG_LOGIN_ERR_NO_PASSWORD", "You must enter a password!");
 define("LANG_LOGIN_ERR_BAD_USER_OR_PASSWORD", "You entered a wrong username or password!");
 
+define("LANG_REGISTER_ERR", "Registration failed:");
 define("LANG_REGISTER_ERR_NO_USER", "You must enter a username!");
 define("LANG_REGISTER_ERR_NO_PASSWORD", "You must enter a password!");
 define("LANG_REGISTER_ERR_NO_PASSWORD_REPEAT", "You must repeat your password!");
