@@ -24,10 +24,10 @@ class Controller_Ajax extends Controller {
 		$file{0} = strtolower($file{0});
 		$file = CONTROLLERS . $file;
 
-		if(file_exists($file)) {
+		if (file_exists($file)) {
 			require_once ($file);
 
-			if(class_exists($classname, false)) {
+			if (class_exists($classname, false)) {
 				$ajax = new $classname($this -> request);
 
 				// Inhalt der Webanwendung ausgeben.

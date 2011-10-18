@@ -14,7 +14,7 @@ class DB {
 		$this -> mysqli = new mysqli(SQL_SERVER, SQL_USER, SQL_PASSWORD, SQL_DATABASE);
 
 		/* check connection */
-		if($this -> mysqli -> connect_errno) {
+		if ($this -> mysqli -> connect_errno) {
 			printf("Connect failed: %s\n", $this -> mysqli -> connect_error);
 			exit();
 		}
@@ -34,7 +34,7 @@ class DB {
 	 * @return Array Result der Abfrage
 	 */
 	public function query($string) {
-		if($result = $this -> mysqli -> query($string))
+		if ($result = $this -> mysqli -> query($string))
 			return $result;
 		else
 			return null;
@@ -49,12 +49,12 @@ class DB {
 	public function fetch_all($result) {
 		$out = array();
 
-		while($row = $result -> fetch_assoc())
+		while ($row = $result -> fetch_assoc())
 			$out[] = $row;
 
 		return $out;
 	}
-	
+
 	/**
 	 * Datensätze zählen
 	 *
@@ -64,7 +64,7 @@ class DB {
 	public function num_rows($result) {
 		return $result -> num_rows;
 	}
-	
+
 	/**
 	 * Variable escapen
 	 *

@@ -17,13 +17,13 @@ class Controller {
 	public function __construct($request) {
 		$this -> request = $request;
 
-		if(method_exists($this, "init"))
+		if (method_exists($this, "init"))
 			$this -> init();
 
 		$classname = get_class($this);
 
-		if(strpos($classname, "Controller_") == 0)
-			$this -> layout = new View(strtolower($classname{11}) . substr($classname, 12), true); 
+		if (strpos($classname, "Controller_") == 0)
+			$this -> layout = new View(strtolower($classname{11}) . substr($classname, 12), true);
 		else
 			$this -> layout = new View("notfound");
 	}
@@ -34,7 +34,7 @@ class Controller {
 	 * @return String Content der Applikation.
 	 */
 	public function load() {
-		if(method_exists($this, "make"))
+		if (method_exists($this, "make"))
 			$this -> make();
 
 		return $this -> layout -> loadLayout();

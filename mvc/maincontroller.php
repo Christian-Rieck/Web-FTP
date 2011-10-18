@@ -23,15 +23,15 @@ class MainController {
 	 */
 	public function __construct() {
 		$this -> request = array_merge($_GET, $_POST);
-		
+
 		// Objekt zum Initialisieren und Deinitialisieren der Seite bereit stellen
-		if(file_exists(CLASSES . "side.class.php")) {
-			require_once(CLASSES . "side.class.php");
-			
-			if(class_exists("Side"))
+		if (file_exists(CLASSES . "side.class.php")) {
+			require_once (CLASSES . "side.class.php");
+
+			if (class_exists("Side"))
 				$this -> side = new Side($this -> request);
 		}
-		
+
 		$this -> module = !empty($this -> request['module']) ? $this -> request['module'] : 'default';
 
 		echo $this -> display();
@@ -43,8 +43,8 @@ class MainController {
 	 * @param Controller $controller Zielcontroller
 	 */
 	private function runAction($controller) {
-		foreach($this->request as $key => $value) {
-			if(strpos($key, "action_") >= 0 && method_exists($controller, $key))
+		foreach ($this->request as $key => $value) {
+			if (strpos($key, "action_") >= 0 && method_exists($controller, $key))
 				$controller -> $key();
 		}
 	}
@@ -62,10 +62,10 @@ class MainController {
 		$file{0} = strtolower($file{0});
 		$file = CONTROLLERS . $file;
 
-		if(file_exists($file)) {
+		if (file_exists($file)) {
 			require_once ($file);
 
-			if(class_exists($classname, false)) {
+			if (class_exists($classname, false)) {
 				$controller = new $classname($this -> request);
 
 				// Ausführen der Aktion

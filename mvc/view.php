@@ -15,7 +15,7 @@ class View {
 	 * @param String $template Template
 	 */
 	public function __construct($template = 'default', $layout = false) {
-		if($layout)
+		if ($layout)
 			$this -> setLayout($template);
 		else
 			$this -> setTemplate($template);
@@ -62,7 +62,7 @@ class View {
 		$file = TEMPLATES . $tpl . '.php';
 		$exists = file_exists($file);
 
-		if($exists) {
+		if ($exists) {
 			// Der Output des Scripts wird n einen Buffer gespeichert, d.h.
 			// nicht gleich ausgegeben.
 			ob_start();
@@ -94,7 +94,7 @@ class View {
 		$file = LAYOUTS . $tpl . '.php';
 		$exists = file_exists($file);
 
-		if($exists) {
+		if ($exists) {
 			// Der Output des Scripts wird n einen Buffer gespeichert, d.h.
 			// nicht gleich ausgegeben.
 			ob_start();

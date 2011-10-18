@@ -19,12 +19,12 @@ class Model_User extends Model {
 			FROM
 				users
 			WHERE
-				username = '" . $this -> db -> escape ($username) . "' 
+				username = '" . $this -> db -> escape($username) . "' 
 				AND password = '" . $password . "'";
-		
+
 		return ($result = $this -> db -> query($sql)) && $this -> db -> num_rows($result) == 1;
 	}
-	
+
 	/**
 	 * Prüfen ob ein bestimmter Benutzername existiert
 	 *
@@ -39,11 +39,11 @@ class Model_User extends Model {
 			FROM
 				users
 			WHERE
-				username = '" . $this -> db -> escape ($username) . "'";
-		
+				username = '" . $this -> db -> escape($username) . "'";
+
 		return ($result = $this -> db -> query($sql)) && $this -> db -> num_rows($result) > 0;
 	}
-	
+
 	/**
 	 * Anlegen eines neuen Users
 	 *
@@ -58,13 +58,13 @@ class Model_User extends Model {
 				users
 			VALUES (
 				''
-				, '" . $this -> db -> escape ($username) . "'
-				, '" . $this -> db -> escape ($password) . "'
+				, '" . $this -> db -> escape($username) . "'
+				, '" . $this -> db -> escape($password) . "'
 				)";
-		
+
 		return ($result = $this -> db -> query($sql));
 	}
-	
+
 	/**
 	 * ID eines Benutzers herausfinden
 	 *
@@ -79,17 +79,15 @@ class Model_User extends Model {
 			FROM
 				users
 			WHERE
-				username = '" . $this -> db -> escape ($username) . "'";
-		
-		if ($result = $this -> db -> query($sql))
-		{
+				username = '" . $this -> db -> escape($username) . "'";
+
+		if ($result = $this -> db -> query($sql)) {
 			$id = $this -> db -> fetch_all($result);
 			return $id[0]['id'];
-		}
-		else
+		} else
 			return 0;
 	}
-	
+
 	/**
 	 * Einloggen eines Benutzers
 	 *
@@ -98,15 +96,12 @@ class Model_User extends Model {
 	 * @return Bool Erfolgreich eingeloggt
 	 */
 	public function login($username) {
-		if($id = $this -> getID($username))
-		{
+		if ($id = $this -> getID($username)) {
 			$_SESSION['id'] = $id;
 			return true;
-		}
-		else
+		} else
 			return false;
 	}
 
 }
-
 ?>
