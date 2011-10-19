@@ -39,11 +39,10 @@ class Controller_LoginForm extends Controller {
 						if (class_exists("Model_User")) {
 							$user = new Model_User();
 
-							if ($user -> checkLogin($username, md5($password)))
-								if ($user -> login($username))
-									header("Location: User");
-								else
-									$view -> assign('loginFailed', true);
+							if ($user -> checkLogin($username, md5($password)) && $user -> login($username))
+								header("Location: User");
+							else
+								$view -> assign('loginFailed', true);
 						}
 					}
 				}
