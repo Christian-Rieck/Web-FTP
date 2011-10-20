@@ -1,0 +1,53 @@
+#topMenu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 22px;
+	line-height: 22px;
+	width: 100%;
+	background: #EEE;
+	opacity: 0.95;
+	z-index: 100;
+	overflow: hidden;
+	box-shadow: 0 0 7px #222;
+}
+
+#topMenu > .content {
+	height: 100%;
+	padding: 0 5px;
+	z-index: 100;
+	position: relative;
+}
+
+#topMenu > .content > ul {
+	margin: 0;
+	padding: 0;
+}
+
+#topMenu > .content > ul > li {
+	padding: 3px 7px;
+	display: inline;
+}
+
+#topMenu > .content > ul > li:hover {
+	background: #44F;
+	color: #FFF;
+	cursor: pointer;
+}
+
+#topMenu > .hider {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	top: -100%;
+}
+
+#topMenu > .hider > .background {
+	position: relative;
+	top: -30px;
+	left: -30px;
+	width: 200%;
+	height: 60px;
+	box-shadow: 0 0 30px #333 inset;
+}
