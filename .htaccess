@@ -1,7 +1,9 @@
 RewriteEngine On
 
-RewriteRule ^Ajax/(.*)/(.*)$ index.php?module=ajax&ajaxmodul=$1&$2
+RewriteRule ^[Aa]jax/(.*)/(.*)$ index.php?module=ajax&ajaxmodul=$1&$2
 
-RewriteRule ^User$ index.php?module=user
+RewriteRule ^[Uu]ser/(.*)$ index.php?module=user&menu=$1
+
+RewriteRule ^([a-z,A-Z]+)$ index.php?module=$1
 
 RewriteRule ^$ index.php
