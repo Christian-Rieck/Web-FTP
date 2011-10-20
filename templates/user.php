@@ -1,62 +1,41 @@
-<script type="text/javascript">
-	$(document).ready(function() {
-		$(".item").click(function() {
-			var i, p, c, oi, ni;
-			
-			i = $(this);
-			p = i.parent();
-			c = p.children(".checked");
-			oi = c.children(".content").children(".icon");
-			ni = i.children(".content").children(".icon");
-			
-			c.removeClass("checked");
-			
-			oi.css("background-image", oi.css("background-image").replace("/active/", "/inactive/"));
-			
-			i.addClass("checked");
-			
-			ni.css("background-image", ni.css("background-image").replace("/inactive/", "/active/"));
-			
-			p.children(".triangle").animate({
-					top: i.index() * 70 + 24
-				}, 500);
-		});
-	});
-</script>
-
 	<div class="window">
 		<div class="head">
-			<div class="text">User Control Panel</div>
+			<div class="text"><?php echo LANG_UCP_HEADER; ?></div>
 			<div class="background"></div>
 		</div>
 		
 		<div class="mainpart">
 			<div class="menu">
-				<div class="item checked">
+				<div class="item checked" id="UserOverview">
 					<div class="content">
 						<div class="icon" style="background: url('<?php echo ROOT . "resources/images/menu/active/overview.png"; ?>') no-repeat center center;"></div>
-						Overview
+						<?php echo LANG_UCP_MENU_OVERVIEW; ?>
 					</div>
 				</div>
-				<div class="item">
+				<div class="item" id="UserHistory">
 					<div class="content">
 						<div class="icon" style="background: url('<?php echo ROOT . "resources/images/menu/inactive/history.png"; ?>') no-repeat center center;"></div>
-						History
+						<?php echo LANG_UCP_MENU_HISTORY; ?>
 					</div>
 				</div>
-				<div class="item">
+				<div class="item" id="UserServer">
 					<div class="content">
 						<div class="icon" style="background: url('<?php echo ROOT . "resources/images/menu/inactive/server.png"; ?>') no-repeat center center;"></div>
-						Server
+						<?php echo LANG_UCP_MENU_SERVER; ?>
 					</div>
 				</div>
-				<div class="item">
+				<div class="item" id="UserSettings">
 					<div class="content">
 						<div class="icon" style="background: url('<?php echo ROOT . "resources/images/menu/inactive/settings.png"; ?>') no-repeat center center;"></div>
-						Settings
+						<?php echo LANG_UCP_MENU_SETTINGS; ?>
 					</div>
 				</div>
 				<div class="triangle"></div>
+			</div>
+			<div class="content">
+				<div>
+					<?php echo $this -> _['content']; ?>
+				</div>
 			</div>
 		</div>
 	</div>

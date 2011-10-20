@@ -2,6 +2,15 @@
 
 class Controller_Login extends Controller {
 
+	public function init() {
+	
+		if (isset($_SESSION['id'])) {
+			header("Location: " . ROOT . "User");
+			break;
+		}
+		
+	}
+
 	public function make() {
 
 		$header = new View('header');

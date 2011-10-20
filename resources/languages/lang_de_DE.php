@@ -219,4 +219,17 @@ define("LANG_SETTINGS_HEAD", "Einstellungen");
 define("LANG_SETTINGS_CHOOSE_LANG", "Sprache wählen:");
 define("LANG_SETTINGS_SAVE", "Einstellungen speichern");
 
+/* -----------------------------------*/
+/* ----------->>> UCP <<<-------------*/
+/* -----------------------------------*/
+
+define("LANG_UCP_TITLE", "Web-FTP :: User Control Panel");
+
+define("LANG_UCP_HEADER", "User Control Panel");
+
+define("LANG_UCP_MENU_OVERVIEW", "Übersicht");
+define("LANG_UCP_MENU_HISTORY", "Verlauf");
+define("LANG_UCP_MENU_SERVER", "Server");
+define("LANG_UCP_MENU_SETTINGS", "Einstellungen");
+
 ?>

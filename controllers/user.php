@@ -1,24 +1,38 @@
 <?php
 
 class Controller_User extends Controller {
-
+	
+	public function init() {
+	
+		if (!isset($_SESSION['id'])) {
+			header("Location: " . ROOT);
+			break;
+		}
+		
+	}
+	
 	public function make() {
-
+		
 		$header = new View('header');
 		$footer = new View('footer');
 
-		if (!isset($_SESSION['id'])) {
-			$user = new View('userFailed');
-			$header -> assign('headerTitle', "Web-FTP :: Bitte einloggen!");
-		} else {
-			$user = new View('user');
+		$user = new View('user');
+		
+		
+		if (file_exists(CONTROLLERS . "userOverview.php")) {
+			require_once (CONTROLLERS . "userOverview.php");
 
-			// Header festlegen
-			$header -> assign('headerTitle', "Web-FTP :: User Control Panel");
-			$header -> assign('javascript', "ucp.js");
+			if (class_exists("Controller_UserOverview")) {
+				$content = new Controller_UserOverview($this -> request);
+			}
 		}
-
+		
+		// Header festlegen
+		$header -> assign('headerTitle', LANG_UCP_TITLE);
+		$header -> assign('javascript', "ucp.js");
 		$header -> assign('stylesheet', "ucp.css");
+		
+		$user -> assign('content', $content -> load());
 
 		$this -> layout -> assign('header', $header -> loadTemplate());
 		$this -> layout -> assign('user', $user -> loadTemplate());

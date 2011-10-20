@@ -31,12 +31,9 @@ a.href {
 	background-color: #dbdbdb; 
 	border-radius: 10px;
 	box-shadow: 0 0 10px #000;
-	text-align: left;
-	
-	/*margin: 30px auto 0 auto;*/
-	
+	text-align: left;	
 	position: relative;
-	top: 30px;
+	margin-top: 100px;
 }
 
 .window .head {
@@ -44,7 +41,6 @@ a.href {
 	background-color: #f0f0f0; 
 	border-radius: 10px 10px 0 0; 
 	border-bottom: 1px solid #777; 
-	
 	overflow: hidden;
 	position: relative;
 }
@@ -86,6 +82,7 @@ a.href {
 	overflow: hidden;
 	position: relative;
 	border-radius: 0 0 0 10px;
+	float: left;
 }
 
 .window .mainpart .menu .item {
@@ -112,15 +109,24 @@ a.href {
 	text-align: center;
 	color: #707070;
 	vertical-align: 20%;
-	font-size: 13;
+	font-size: 11;
 }
 
-.window > .mainpart > .menu > .item > .content > .icon {
+.window .mainpart .menu .item .content .icon {
 	width: 32px; 
 	height: 32px;
 	margin: 0 auto 12px auto;
 	top: 7px;
 	position: relative;
+}
+
+.window > .mainpart > .content {
+	margin-left: 70px; 
+	height: 100%;
+}
+
+.window > .mainpart > .content > div {
+	padding: 5px;
 }
 
 .triangle {
