@@ -39,6 +39,25 @@ class Controller {
 
 		return $this -> layout -> loadLayout();
 	}
+	
+	/**
+	 * Methode zum Laden eines Controllers
+	 *
+	 * @param String Name des Controllers
+	 * @return Controller Instanz der Klasse
+	 */
+	public function loadController($controller) {
+		$lController = strtolower($controller{0}) . substr($controller,1);
+		$uController = strtoupper($controller{0}) . substr($controller,1);
+		
+		if (file_exists(CONTROLLERS . $lController . ".php")) {
+			require_once (CONTROLLERS . $lController . ".php");
+			
+			$classname = "Controller_" . $uController;
+			if (class_exists($classname)) 
+				return $result = new $classname($this -> request);
+		}
+	}
 
 }
 ?>

@@ -23,13 +23,7 @@ class Controller_Login extends Controller {
 		$header -> assign('javascript', "login.js");
 
 		// Laden der gewünschten Form
-		if (file_exists(CONTROLLERS . "loginForm.php")) {
-			require_once (CONTROLLERS . "loginForm.php");
-
-			if (class_exists("Controller_LoginForm")) {
-				$loginForm = new Controller_LoginForm($this -> request);
-			}
-		}
+		$loginForm = $this -> loadController("LoginForm");
 
 		$login -> assign('formBox', $loginForm -> load());
 

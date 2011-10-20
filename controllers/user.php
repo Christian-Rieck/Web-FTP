@@ -14,18 +14,30 @@ class Controller_User extends Controller {
 	public function make() {
 		
 		$header = new View('header');
+		$header -> assign('topMenu', true);
+		
 		$footer = new View('footer');
 
 		$user = new View('user');
 		
+		$menus = array(
+						"Overview" => 1
+						, "History" => 2
+						, "Server" => 3
+						, "Settings" => 4);
 		
-		if (file_exists(CONTROLLERS . "userOverview.php")) {
-			require_once (CONTROLLERS . "userOverview.php");
-
-			if (class_exists("Controller_UserOverview")) {
-				$content = new Controller_UserOverview($this -> request);
-			}
+		if (isset($this -> request['menu'])) {
+			$menuname = $this -> request['menu'];
+			$menuname = strtoupper($menuname{0}) . substr($menuname, 1);
 		}
+		
+		if (!$menus[$menuname])
+			$menuname = "Overview";
+		
+		$content = $this -> loadController("User" . $menuname);
+		$user -> assign('activeMenu', $menuname);
+		
+		$user -> assign('triangleTop', ($menus[$menuname] - 1) * 70 + 24);
 		
 		// Header festlegen
 		$header -> assign('headerTitle', LANG_UCP_TITLE);
