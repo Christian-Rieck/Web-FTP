@@ -29,4 +29,46 @@ $(document).ready(function() {
 				co.fadeIn();		
 	    	});
 	});
+	
+	var me = false;
+			
+	function closeMenu() {
+		$("#topMenu > .menu").hide(200);
+		$("#topMenu > .content > .bar > li").removeClass("marked");
+		
+		me = false;
+	}
+	
+	function openMenu(li) {
+		var m, p;
+		
+		m = $("#topMenu > .menu > div");
+		p = m.parent();
+		
+		m.css("left", li.position().left + "px");
+		m.html("Ein Testeintrag");
+		
+		$("#topMenu > .content > .bar > li").removeClass("marked");
+		li.addClass("marked");
+		
+		p.show();
+		
+		p.click(function() {
+			closeMenu();
+		});
+		
+		me = true;
+	}
+	
+	$("#topMenu > .content > .bar > li").click(function() {
+		if	(me)
+			closeMenu();
+		else
+			openMenu($(this));
+	});
+	
+	$("#topMenu > .content > .bar > li").mouseover(function() {
+		if (me)
+			openMenu($(this));
+	});
 });

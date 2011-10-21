@@ -19,11 +19,14 @@
 		<?php if ($this -> _['topMenu']) { ?>
 			<div id="topMenu">
 				<div class="content">
-					<ul>
+					<ul class="bar">
 						<li><b>UCP</b></li>
 						<li>Test</li>
 						<li>Blup</li>
 					</ul>
+				</div>
+				<div class="menu">
+					<div></div>
 				</div>
 				<div class="hider"><div class="background"></div></div>
 			</div>

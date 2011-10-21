@@ -20,19 +20,41 @@
 }
 
 #topMenu > .content > ul {
-	margin: 0;
+	margin: 0 0 0 6px;
 	padding: 0;
+}
+
+#topMenu > .content > ul > .marked {
+	background: #44F;
+	color: #FFF;
 }
 
 #topMenu > .content > ul > li {
 	padding: 3px 7px;
 	display: inline;
+	margin-left: -4px
 }
 
 #topMenu > .content > ul > li:hover {
-	background: #44F;
-	color: #FFF;
 	cursor: pointer;
+}
+
+#topMenu > .menu {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: none;
+}
+
+#topMenu > .menu > div {
+	background-color: #FFF;
+	border-radius: 0 0 3px 3px;
+	box-shadow: 0 0 5px #000;
+	display: inline;
+	position: relative;
+	padding: 1px 5px;
+	margin-left: -4px;
 }
 
 #topMenu > .hider {
