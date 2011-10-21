@@ -8,7 +8,7 @@
 	background: #EEE;
 	opacity: 0.95;
 	z-index: 100;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	box-shadow: 0 0 7px #222;
 }
 
@@ -45,6 +45,8 @@
 	height: 100%;
 	overflow: hidden;
 	display: none;
+	position: fixed;
+	z-index: 300;
 }
 
 #topMenu > .menu > div {
@@ -61,8 +63,10 @@
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
-	position: relative;
-	top: -100%;
+	/*position: relative;
+	top: -100%;*/
+	position: absolute;
+	top: 0;
 }
 
 #topMenu > .hider > .background {

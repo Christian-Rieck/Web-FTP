@@ -20,9 +20,9 @@
 			<div id="topMenu">
 				<div class="content">
 					<ul class="bar">
-						<li><b>UCP</b></li>
-						<li>Test</li>
-						<li>Blup</li>
+						<li value="ucp"><b>UCP</b></li>
+						<li value="connections">Verbindungen</li>
+						<li value="help">Hilfe</li>
 					</ul>
 				</div>
 				<div class="menu">
