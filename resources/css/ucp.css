@@ -24,6 +24,12 @@ a.href {
 .right {
 	float: right;
 }
+.bold {
+	font-weight: bold;
+}
+.hidden {
+	display: none;
+}
 	
 .window {
 	width: 600px; 

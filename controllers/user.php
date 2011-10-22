@@ -16,10 +16,6 @@ class Controller_User extends Controller {
 		$header = new View('header');
 		$header -> assign('topMenu', true);
 		
-		$footer = new View('footer');
-
-		$user = new View('user');
-		
 		$menus = array(
 						"Overview" => 1
 						, "History" => 2
@@ -33,8 +29,9 @@ class Controller_User extends Controller {
 		
 		if (!$menus[$menuname])
 			$menuname = "Overview";
-		
-		$content = $this -> loadController("User" . $menuname);
+			
+		$user = new View('user');
+			
 		$user -> assign('activeMenu', $menuname);
 		
 		$user -> assign('triangleTop', ($menus[$menuname] - 1) * 70 + 24);
@@ -44,6 +41,58 @@ class Controller_User extends Controller {
 		$header -> assign('javascript', "ucp.js");
 		$header -> assign('stylesheet', "ucp.css");
 		
+		$topMenus = array(
+				"ucp" => array(
+						"text" => "UCP"
+						, "bold" => true
+						, "content" => array(
+								"about" => array(
+										"text" => "About UCP"
+										, "content" => null
+									)
+								, "-" => null
+								, "logout" => array(
+										"text" => "Logout"
+										, "content" => null
+									)
+							)
+					)
+				, "help" => array(	
+						"text" => "Hilfe"
+						, "content" => array(
+								"showhelp" => array(
+										"text" => "Hilfethemen anzeigen"
+										, "content" => null
+									)
+							)
+					)
+					
+					
+					
+				/*, "connections" => array(
+						"Verbindung"
+						, array(
+								"Neue Verbindung" => null
+								, "-" => null
+								, "Verbindungen..." => array(
+									"Verbindung 1" => null
+									, "Verbindung 2" => null
+								)
+						)
+					)
+				, "help" => array(	
+					"Hilfe"
+					, array(
+						"Hilfethemen anzeigen" => null
+					)
+				)*/
+			);
+			
+		$header -> assign("topMenus", $topMenus);
+
+		$footer = new View('footer');
+		
+		$content = $this -> loadController("User" . $menuname);		
 		$user -> assign('content', $content -> load());
 
 		$this -> layout -> assign('header', $header -> loadTemplate());

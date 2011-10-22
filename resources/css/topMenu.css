@@ -1,75 +1,105 @@
 #topMenu {
 	position: fixed;
-	top: 0;
-	left: 0;
-	height: 22px;
-	line-height: 22px;
-	width: 100%;
-	background: #EEE;
 	opacity: 0.95;
 	z-index: 100;
-	/*overflow: hidden;*/
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+#topMenu > .bar {
+	height: 22px;
+	line-height: 22px;
+	background: #EEE;
+	z-index: 100;
 	box-shadow: 0 0 7px #222;
 }
 
-#topMenu > .content {
+#topMenu > .bar > .content {
 	height: 100%;
 	padding: 0 5px;
 	z-index: 100;
-	position: relative;
+	position: absolute;
+	width: 100%;
 }
 
-#topMenu > .content > ul {
+#topMenu > .bar > .content > ul {
 	margin: 0 0 0 6px;
 	padding: 0;
+	overflow: hidden;
 }
 
-#topMenu > .content > ul > .marked {
+#topMenu > .bar > .content > ul > .marked {
 	background: #44F;
 	color: #FFF;
 }
 
-#topMenu > .content > ul > li {
+#topMenu > .bar > .content > ul > li {
 	padding: 3px 7px;
 	display: inline;
-	margin-left: -4px
 }
 
-#topMenu > .content > ul > li:hover {
+#topMenu > .bar > .content > ul > li:hover {
 	cursor: pointer;
 }
 
 #topMenu > .menu {
-	position: fixed;
+	position: relative;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
 	display: none;
-	position: fixed;
 	z-index: 300;
+	top: 1px;
 }
 
 #topMenu > .menu > div {
-	background-color: #FFF;
+	background: #FEFEFE;
 	border-radius: 0 0 3px 3px;
 	box-shadow: 0 0 5px #000;
-	display: inline;
+	display: inline-block;
 	position: relative;
-	padding: 1px 5px;
-	margin-left: -4px;
 }
 
-#topMenu > .hider {
+#topMenu > .menu > div > ul {
+	padding: 4px 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+#topMenu > .menu > div > ul > li {
+	padding: 2px 10px;
+	margin: 0;
+}
+
+#topMenu > .menu > div > ul > li:hover {
+	background: #44F;
+	color: #FFF;
+	cursor: pointer;
+}
+
+#topMenu > .menu > div > ul > li.spacer {
+	padding: 2px 0;
+}
+
+#topMenu > .menu > div > ul > li.spacer:hover {
+	background: #FEFEFE;
+	color: #000;
+}
+
+#topMenu > .menu > div > ul > li.spacer > hr {
+	border-width: 1px 0 0 0;
+	border-color: #E3E3E3;
+	border-style: solid;
+}
+
+#topMenu > .bar > .hider {
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
-	/*position: relative;
-	top: -100%;*/
-	position: absolute;
-	top: 0;
 }
 
-#topMenu > .hider > .background {
+#topMenu > .bar > .hider > .background {
 	position: relative;
 	top: -30px;
 	left: -30px;

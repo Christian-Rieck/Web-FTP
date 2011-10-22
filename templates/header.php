@@ -18,17 +18,49 @@
 	<body>
 		<?php if ($this -> _['topMenu']) { ?>
 			<div id="topMenu">
-				<div class="content">
-					<ul class="bar">
-						<li value="ucp"><b>UCP</b></li>
-						<li value="connections">Verbindungen</li>
-						<li value="help">Hilfe</li>
-					</ul>
+				<div class="bar">
+					<div class="content">
+						<ul><?php
+						
+						
+						foreach($this -> _['topMenus'] as $key => $value) {
+							echo "<li tag=\"{$key}\"" . ($value['bold'] ? " class=\"bold\"" : "") . ">{$value['text']}</li>";
+						}
+						
+						
+						?>
+							<!--<li value="ucp"><b>UCP</b></li>
+							<li value="connections">Verbindungen</li>
+							<li value="help">Hilfe</li> //-->
+						</ul>
+					</div>
+					<div class="hider"><div class="background"></div></div>
 				</div>
 				<div class="menu">
-					<div></div>
+					<div>
+						<!-- <ul>
+							<li>Neu</li>
+							<li>Öffnen</li>
+							<li class="spacer"><hr /></li>
+							<li>Schließen</li>
+						</ul> //-->
+						
+						<?php
+							foreach($this -> _['topMenus'] as $key => $value) {
+								echo "<ul id=\"tm_{$key}\" class=\"hidden\">";
+								
+								foreach($value['content'] as $ukey => $uvalue) {
+									if ($ukey != "-")
+										echo "<li tag=\"{$ukey}\">{$uvalue['text']}</li>";
+									else
+										echo "<li class=\"spacer\"><hr /></li>";
+								}
+								
+								echo "</ul>";
+							}
+						?>
+					</div>
 				</div>
-				<div class="hider"><div class="background"></div></div>
 			</div>
 		<?php } ?>
 		<center>

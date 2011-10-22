@@ -34,7 +34,8 @@ $(document).ready(function() {
 			
 	function closeMenu() {
 		$("#topMenu > .menu").hide(200);
-		$("#topMenu > .content > .bar > li").removeClass("marked");
+		$("#topMenu > .bar > .content > ul > li").removeClass("marked");
+		$("#topMenu").css("height", "");
 		
 		me = false;
 	}
@@ -42,13 +43,18 @@ $(document).ready(function() {
 	function openMenu(li) {
 		var m, p;
 		
+		$("#topMenu").css("height", "100%");
 		m = $("#topMenu > .menu > div");
 		p = m.parent();
 		
 		m.css("left", li.position().left + "px");
-		m.html("Ein Testeintrag");
+		//m.html(m.children("#™_" + li.attr("value")).html());
+		//m.children("#™_" + li.attr("value")).removeClass("hidden");
 		
-		$("#topMenu > .content > .bar > li").removeClass("marked");
+		m.children().addClass("hidden");
+		m.children("#tm_" + li.attr("tag")).removeClass("hidden");
+		
+		$("#topMenu > .bar > .content > ul > li").removeClass("marked");
 		li.addClass("marked");
 		
 		p.show();
@@ -60,14 +66,14 @@ $(document).ready(function() {
 		me = true;
 	}
 	
-	$("#topMenu > .content > .bar > li").click(function() {
-		if	(me)
+	$("#topMenu > .bar > .content > ul > li").click(function() {
+		if (me)
 			closeMenu();
 		else
 			openMenu($(this));
 	});
 	
-	$("#topMenu > .content > .bar > li").mouseover(function() {
+	$("#topMenu > .bar > .content > ul > li").mouseover(function() {
 		if (me)
 			openMenu($(this));
 	});
