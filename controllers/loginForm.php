@@ -5,11 +5,11 @@ class Controller_LoginForm extends Controller {
 	public function make() {
 
 		if ($this -> request['form'] != "register" && !isset($this -> request['submit_register'])) {
-			if ((isset($this -> request['form']) && $this -> request['form'] == "user") || isset($this -> request['submit_user'])) {
+			if ((isset($this -> request['form']) && $this -> request['form'] == "loginTabUser") || isset($this -> request['submit_user'])) {
 				$view = new View('loginFormUser');
-			} else if ((isset($this -> request['form']) && $this -> request['form'] == "register") || isset($this -> request['submit_register'])) {
+			} else if ((isset($this -> request['form']) && $this -> request['form'] == "loginTabRegister") || isset($this -> request['submit_register'])) {
 				$view = new View('loginFormRegister');
-			} else if (!isset($this -> request['form']) || (isset($this -> request['form']) && $this -> request['form'] == "ftp") || isset($this -> request['submit_ftp'])) {
+			} else if (!isset($this -> request['form']) || (isset($this -> request['form']) && $this -> request['form'] == "loginTabFtp") || isset($this -> request['submit_ftp'])) {
 				$view = new View('loginFormFtp');
 			}
 
