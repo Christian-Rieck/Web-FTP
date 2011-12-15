@@ -114,7 +114,7 @@ a.href {
 	text-align: center;
 	color: #707070;
 	vertical-align: 20%;
-	font-size: 11;
+	font-size: 11px;
 }
 
 .window .mainpart .menu .item .content .icon {
@@ -128,10 +128,163 @@ a.href {
 .window > .mainpart > .content {
 	margin-left: 70px; 
 	height: 100%;
+	position: relative;
 }
 
 .window > .mainpart > .content > div {
-	padding: 5px;
+	padding: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/*
+ * History Tab
+ */
+.window > .mainpart > .content > div > .history {
+	position: relative;
+	background-color: #FFFFFF;
+	border: 1px solid #AAAAAA;
+	width: 40%;
+	height: 100%;
+}
+
+.window > .mainpart > .content > div > .history > .item {
+	width: 100%;
+	height: 40px;
+}
+
+.window > .mainpart > .content > div > .history > .item.marked {
+	width: 100%;
+	height: 40px;
+	background-color: #3088CD;
+	color: #FFF;
+	position: relative;
+	overflow: hidden;
+}
+
+.window > .mainpart > .content > div > .history > .item > .shadow {
+	display: none;
+	position: absolute;
+	left: -50px;
+	width: 200%;
+	height: 200%;
+	box-shadow: #DADADA 0px 0px 50px inset;
+	border-bottom: 1px solid #9BAAC3
+}
+
+.window > .mainpart > .content > div > .history > .item.marked > .shadow {
+	display: block !important;
+}
+
+.window > .mainpart > .content > div > .history > .item > .text {
+	position: relative; 
+	top: 3px; 
+	left: 10px;
+}
+
+.window > .mainpart > .content > div > .history > .item > .text > .info {
+	font-size: 10px;
+	color: #888;
+}
+
+.window > .mainpart > .content > div > .history > .item.marked > .text > .info {
+	font-size: 10px;
+	color: #FFF !important;
+}
+
+
+/*
+ * Server Tab
+ */
+.window > .mainpart > .content > div > .server {
+	position: relative;
+	height: 100%;
+}
+
+.window > .mainpart > .content > div > .server > .list {
+	position: absolute;
+	background-color: #FFFFFF;
+	border: 1px solid #AAAAAA;
+	width: 40%;
+	overflow-y: auto;
+	top: 0;
+	bottom: 20px;
+}
+
+.window > .mainpart > .content > div > .server > .list > .item {
+	width: 100%;
+	height: 40px;
+	overflow: hidden;
+	position: relative;
+}
+
+.window > .mainpart > .content > div > .server > .list > .item.marked {
+	background-color: #3088CD;
+	color: #FFF;
+}
+
+.window > .mainpart > .content > div > .server > .list > .item > .shadow {
+	display: none;
+	position: absolute;
+	left: -50px;
+	width: 200%;
+	height: 200%;
+	box-shadow: #DADADA 0px 0px 50px inset;
+	z-index: 30;
+}
+
+.window > .mainpart > .content > div > .server > .list > .item.marked > .shadow {
+	display: block !important;
+}
+
+.window > .mainpart > .content > div > .server > .list > .item > .gradient {
+	position: absolute;
+	right: 20px;
+	top: -25px;
+	width: 200%;
+	height: 200%;
+	box-shadow: #FFF -45px 0px 30px inset;
+	z-index: 20
+}
+
+.window > .mainpart > .content > div > .server > .list > .item.marked > .gradient {
+	box-shadow: #3088CD -45px 0px 30px inset !important;
+}
+
+.window > .mainpart > .content > div > .server > .list > .item > .text {
+	position: absolute; 
+	top: 3px; 
+	left: 10px;
+	right: 20px;
+	z-index: 10;
+	overflow: hidden;
+}
+
+.window > .mainpart > .content > div > .server > .list > .item > .text > .info {
+	font-size: 10px;
+	color: #888;
+	white-space: nowrap;
+}
+
+.window > .mainpart > .content > div > .server > .list > .item.marked > .text > .info {
+	font-size: 10px;
+	color: #FFF !important;
+}
+
+.window > .mainpart > .content > div > .server > .detail {
+	background-color: #E4E4E4; 
+	position: absolute; 
+	left: 40%; 
+	top: 0; 
+	right: 0; 
+	bottom: 0; 
+	margin-left: 12px;
+	border-radius: 4px;
+	border: 1px solid #AAA;
+	background-color: #CCC;
 }
 
 .triangle {

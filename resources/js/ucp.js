@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$(".item").click(function() {
+	$(".window > .mainpart > .menu > .item").click(function() {
 		var i, p, c, oi, ni;
 		
 		i = $(this);
@@ -78,3 +78,19 @@ $(document).ready(function() {
 			openMenu($(this));
 	});
 });
+
+function viewServerReady(){
+	$(".window > .mainpart > .content > div > .server").ready(function(){
+		$(".window > .mainpart > .content > div > .server > .list > .item").click(function() {
+			var i, p, c;
+			
+			i = $(this);
+			p = i.parent();
+			c = p.children(".item");
+			
+			c.removeClass("marked");
+			
+			i.addClass("marked");
+		});
+	});
+}

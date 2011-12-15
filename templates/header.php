@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 	<head>
@@ -22,29 +23,16 @@
 					<div class="content">
 						<ul><?php
 						
-						
 						foreach($this -> _['topMenus'] as $key => $value) {
 							echo "<li tag=\"{$key}\"" . ($value['bold'] ? " class=\"bold\"" : "") . ">{$value['text']}</li>";
 						}
 						
-						
-						?>
-							<!--<li value="ucp"><b>UCP</b></li>
-							<li value="connections">Verbindungen</li>
-							<li value="help">Hilfe</li> //-->
-						</ul>
+						?></ul>
 					</div>
 					<div class="hider"><div class="background"></div></div>
 				</div>
 				<div class="menu">
 					<div>
-						<!-- <ul>
-							<li>Neu</li>
-							<li>Öffnen</li>
-							<li class="spacer"><hr /></li>
-							<li>Schließen</li>
-						</ul> //-->
-						
 						<?php
 							foreach($this -> _['topMenus'] as $key => $value) {
 								echo "<ul id=\"tm_{$key}\" class=\"hidden\">";

@@ -6,4 +6,4 @@ RewriteRule ^[Uu]ser/(.*)$ index.php?module=user&menu=$1
 
 RewriteRule ^([a-z,A-Z]+)$ index.php?module=$1
 
-RewriteRule ^$ index.php
+#RewriteRule ^$ index.php

@@ -25,9 +25,9 @@ class Side {
 	public function __destruct() {
 		// Testausgabe
 
-		echo "<div style='text-align:left'><pre>";
+		/*echo "<div style='text-align:left'><pre>";
 		var_dump($this -> request);
-		echo "</pre></div>";
+		echo "</pre></div>";*/
 
 		//echo $GLOBALS['dp'];
 
