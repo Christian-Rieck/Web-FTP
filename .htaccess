@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteRule ^[Aa]jax/(.*)/(.*)$ index.php?module=ajax&ajaxmodul=$1&$2
+
+RewriteRule ^/webftp_mvc/[Uu]ser$ /index.php?module=user
+
+RewriteRule ^([a-z,A-Z]+)$ index.php?module=$1
+
+RewriteRule ^$ index.php
