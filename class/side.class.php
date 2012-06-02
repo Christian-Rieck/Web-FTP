@@ -7,6 +7,8 @@ class Side {
 	public function __construct($request) {
 
 		$this -> request = $request;
+		
+		$GLOBALS['dp'] = "Debug: \n";
 
 		// Session allgemein starten
 		session_start();
@@ -24,12 +26,12 @@ class Side {
 
 	public function __destruct() {
 		// Testausgabe
+		
+		echo "<div style='text-align:left'><pre>";
+		var_dump($this -> request);
+		echo "</pre></div>";
 
-		//echo "<div style='text-align:left'><pre>";
-		//var_dump($this -> request);
-		//echo "</pre></div>";
-
-		//echo $GLOBALS['dp'];
+		echo $GLOBALS['dp'];
 
 	}
 
