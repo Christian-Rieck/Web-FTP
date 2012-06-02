@@ -1,3 +1,13 @@
+.right {
+	float: right;
+}
+.bold {
+	font-weight: bold;
+}
+.hidden {
+	display: none;
+}
+
 #topMenu {
 	position: fixed;
 	opacity: 0.95;
