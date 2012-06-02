@@ -46,6 +46,49 @@ class Controller_LoginForm extends Controller {
 						}
 					}
 				}
+			} else if (isset($this -> request['submit_ftp'])) {
+				$domain = $this -> request['domain'];
+				$this -> request['port'] == 0 ? $port = 21 : $port = $this -> request['port'];
+				$username = $this -> request['username'];
+				$password = $this -> request['password'];
+
+				$fehler = false;
+
+				if (empty($domain)) {
+					$fehler = true;
+					$view -> assign('domainEmpty', true);
+				} else
+					$view -> assign('domain', $domain);
+					
+				if (!preg_match('/^([a-zA-Z]{2,5}:\/\/)?(www\.)?([a-zA-Z0-9]{3,65})(\.[a-zA-Z]{2,4})$/', $domain)) {
+    				$fehler = true;
+    				$view -> assign('badDomain', true);
+					$view -> assign('domain', $domain);
+				} else
+				    $view -> assign('domain', $domain);
+
+				if ($port < 1 || $port > 65535) {
+					$fehler = true;
+					$view -> assign('badPort', true);
+					$view -> assign('port', $port);
+				} else
+					$view -> assign('port', $port);
+					
+				if (empty($username)) {
+					$fehler = true;
+					$view -> assign('usernameEmpty', true);
+				} else
+					$view -> assign('username', $username);
+					
+				if (empty($password)) {
+					$fehler = true;
+					$view -> assign('passwordEmpty', true);
+				} else
+					$view -> assign('password', $password);
+
+				if (!$fehler) {
+					//echo "fehlerfrei";
+				}
 			}
 		} else {
 			$view = new View('loginFormRegister');
