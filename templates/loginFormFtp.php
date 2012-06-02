@@ -2,9 +2,12 @@
 					<div id="login">
 						<?php 
 						if(   $this -> _['domainEmpty'] 
-						   || $this -> _['portEmpty']
+						   || $this -> _['badDomain']
+						   || $this -> _['portEmpty'] 
+						   || $this -> _['badPort']
 						   || $this -> _['usernameEmpty']
-						   || $this -> _['passwordEmpty']) {
+						   || $this -> _['passwordEmpty']
+						   || $this -> _['ftpError']) {
 							echo "<div class=\"error\">";
 							echo LANG_LOGIN_ERR;
 							echo "<ul>";
@@ -24,12 +27,15 @@
 							if($this -> _['passwordEmpty']) {
 								echo "<li>" . LANG_LOGIN_ERR_NO_PASSWORD . "</li>";
 							}
+							if($this -> _['ftpError']) {
+								echo "<li>" . $this -> _['ftpError'] . "</li>";
+							}
 							
 							echo "</ul>";								
 							echo "</div>";
 						}
 						?>
-						<label>(FTP-)Domain:</label><br />
+						<label>Domain / IP:</label><br />
 						<input 
 							type="text" 
 							name="domain" 
@@ -87,6 +93,10 @@
 									<input 
 										type="checkbox" 
 										id="ssl" 
+										<?php
+    										if ($this -> _['sslEnabled'])
+    										    echo "checked=\"checked\"";
+										?>
 										name="ssl" />
 								</td>
 								<td>
