@@ -47,13 +47,13 @@ class Controller_User extends Controller {
 						, "bold" => true
 						, "content" => array(
 								"about" => array(
-										"text" => "About UCP"
+										"text" => "<a href=\"#\">About UCP</a>"
 										, "content" => null
 									)
 								, "-" => null
 								, "logout" => array(
-										"text" => "Logout"
-										, "content" => null
+										"text" => "<a href=\"Logout\">Logout</a>"
+										, "content" => ""
 									)
 							)
 					)
@@ -61,7 +61,7 @@ class Controller_User extends Controller {
 						"text" => "Hilfe"
 						, "content" => array(
 								"showhelp" => array(
-										"text" => "Hilfethemen anzeigen"
+										"text" => "<a href=\"#\">Hilfethemen anzeigen</a>"
 										, "content" => null
 									)
 							)
