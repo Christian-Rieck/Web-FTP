@@ -5,6 +5,13 @@ require_once (MVC . "controller.php");
 require_once (MVC . "model.php");
 
 /**
+ * Benötigte Klassen automatisch laden
+ */
+function __autoload($class_name) {
+    require_once(CLASSES . strtolower($class_name) . ".class.php");
+}
+
+/**
  * Hauptcontroller zum laden des gewünschten Controllers
  */
 class MainController {
