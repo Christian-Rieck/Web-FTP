@@ -48,11 +48,17 @@ class Controller_LoginForm extends Controller {
 				}
 			} else if (isset($this -> request['submit_ftp'])) {
 				$domain = $this -> request['domain'];
-				$this -> request['port'] == 0 ? $port = 21 : $port = $this -> request['port'];
+				$port = $this -> request['port'] == 0 ? 21 : $this -> request['port'];
 				$username = $this -> request['username'];
 				$password = $this -> request['password'];
+				$ssl = $this -> request['ssl'];
+				
+				$GLOBALS['dp'] .= $ssl;
 
 				$fehler = false;
+
+				if ($ssl)
+				    $view -> assign('sslEnabled', true);
 
 				if (empty($domain)) {
 					$fehler = true;
@@ -60,7 +66,8 @@ class Controller_LoginForm extends Controller {
 				} else
 					$view -> assign('domain', $domain);
 					
-				if (!preg_match('/^([a-zA-Z]{2,5}:\/\/)?(www\.)?([a-zA-Z0-9]{3,65})(\.[a-zA-Z]{2,4})$/', $domain)) {
+				if (!preg_match('/^([a-zA-Z]{2,5}:\/\/)?(www\.)?([a-zA-Z0-9]{3,65})(\.[a-zA-Z]{2,4})$/', $domain) &&
+				    !preg_match('#(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)#', $domain)) {
     				$fehler = true;
     				$view -> assign('badDomain', true);
 					$view -> assign('domain', $domain);
@@ -87,7 +94,33 @@ class Controller_LoginForm extends Controller {
 					$view -> assign('password', $password);
 
 				if (!$fehler) {
-					//echo "fehlerfrei";
+				    $ftpConfig = array(
+				        "host"     => $domain,
+				        "username" => $username,
+				        "password" => $password,
+				        "port"     => $port);
+					
+					try
+					{
+    				    $ftp = FTP::getInstance();
+					   
+    				    if ($ssl)
+					        $ftp -> connect($ftpConfig, true, true);
+					    else
+					        $ftp -> connect($ftpConfig);
+					   
+					    $_SESSION['domain']   = $domain;
+					    $_SESSION['port']     = $port;
+					    $_SESSION['username'] = $username;
+					    $_SESSION['password'] = $password;
+					    $_SESSION['ssl']      = $ssl;
+					   
+					    header("Location: " . ROOT . "Ftp");
+				    }
+				    catch (FTPException $error)
+				    {
+    				    $view -> assign('ftpError', $error -> getMessage());
+				    }
 				}
 			}
 		} else {
@@ -166,4 +199,5 @@ class Controller_LoginForm extends Controller {
 	}
 
 }
+
 ?>
