@@ -8,6 +8,10 @@ class Controller_Login extends Controller {
 			header("Location: " . ROOT . "User");
 			break;
 		}
+		if (isset($_SESSION['domain'])) {
+			header("Location: " . ROOT . "Ftp");
+			break;
+		}
 		
 	}
 
