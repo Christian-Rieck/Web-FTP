@@ -4,6 +4,7 @@
 define("DS", DIRECTORY_SEPARATOR);
 
 define("PATH", dirname(__FILE__) . DS);
+define("ROOT", "/");
 
 define("CONTROLLERS", PATH . "controllers" . DS);
 define("MODELS", PATH . "models" . DS);
