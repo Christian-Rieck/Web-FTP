@@ -9,26 +9,28 @@
 							type="text" 
 							name="domain" 
 							class="text" 
-							style="width: 73%"
+							style="width: 160px"
 							placeholder="www.example.com" />
 						<input 
 							type="text" 
 							name="port" 
 							class="text" 
 							maxlength="5"
-							style="min-width: 60px; width: 20%"
+							style="width: 50px; float: right" 
 							placeholder="21" /><br />
 						<label>Username:</label><br />
 						<input 
 							type="text" 
 							name="username" 
 							class="text" 
+							style="width: 230px" 
 							placeholder="Steve Jobs" /><br />
 						<label>Passwort:</label><br />
 						<input 
 							type="password" 
 							name="password" 
 							class="text" 
+							style="width: 230px" 
 							placeholder="••••••••" />
 						<table>
 							<tr style="height: 20px">
