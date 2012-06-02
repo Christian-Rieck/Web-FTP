@@ -67,17 +67,6 @@
 	list-style-type: none;
 }
 
-#topMenu > .menu > div > ul > li {
-	padding: 2px 10px;
-	margin: 0;
-}
-
-#topMenu > .menu > div > ul > li:hover {
-	background: #44F;
-	color: #FFF;
-	cursor: pointer;
-}
-
 #topMenu > .menu > div > ul > li.spacer {
 	padding: 0;
 }
@@ -91,6 +80,19 @@
 	border-width: 1px 0 0 0;
 	border-color: #E3E3E3;
 	border-style: solid;
+}
+
+#topMenu > .menu > div > ul > li > a {
+	padding: 2px 10px;
+	display: block;
+	text-decoration: none;
+	color: #000;
+}
+
+#topMenu > .menu > div > ul > li > a:hover {
+	background: #44F;
+	color: #FFF;
+	cursor: pointer;
 }
 
 #topMenu > .bar > .hider {
