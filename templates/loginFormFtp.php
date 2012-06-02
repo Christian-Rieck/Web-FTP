@@ -1,20 +1,57 @@
 				<form id="tab_ftp" class="tab_content" method="post">
 					<div id="login">
-						<?php
-							if (isset($fehler) && $fehler == true)
-								echo "<div style=\"margin-bottom:10px; color:red; font-size:12px\">" . $fehlermeldung . "</div";
+						<?php 
+						if(   $this -> _['domainEmpty'] 
+						   || $this -> _['portEmpty']
+						   || $this -> _['usernameEmpty']
+						   || $this -> _['passwordEmpty']) {
+							echo "<div class=\"error\">";
+							echo LANG_LOGIN_ERR;
+							echo "<ul>";
+							
+							if($this -> _['domainEmpty']) {
+								echo "<li>" . LANG_LOGIN_ERR_NO_DOMAIN . "</li>";
+							}
+							if($this -> _['badDomain'] && !$this -> _['domainEmpty']) {
+								echo "<li>" . LANG_LOGIN_ERR_BAD_DOMAIN . "</li>";
+							}
+							if($this -> _['badPort']) {
+								echo "<li>" . LANG_LOGIN_ERR_BAD_PORT . "</li>";
+							}								
+							if($this -> _['usernameEmpty']) {
+								echo "<li>" . LANG_LOGIN_ERR_NO_USER . "</li>";
+							}
+							if($this -> _['passwordEmpty']) {
+								echo "<li>" . LANG_LOGIN_ERR_NO_PASSWORD . "</li>";
+							}
+							
+							echo "</ul>";								
+							echo "</div>";
+						}
 						?>
 						<label>(FTP-)Domain:</label><br />
 						<input 
 							type="text" 
 							name="domain" 
-							class="text" 
+							class="text
+							<?php if($this -> _['domainEmpty'] || $this -> _['badDomain']) {
+								echo " error";
+							} ?>"
+							<?php if(isset($this -> _['domain'])) {
+								echo "value=\"{$this -> _['domain']}\"";
+							} ?> 
 							style="width: 160px"
 							placeholder="www.example.com" />
 						<input 
 							type="text" 
 							name="port" 
-							class="text" 
+							class="text
+							<?php if($this -> _['portEmpty'] || $this -> _['badPort']) {
+								echo " error";
+							} ?>"
+							<?php if(isset($this -> _['port']) && $this -> _['port'] != 21) {
+								echo "value=\"{$this -> _['port']}\"";
+							} ?> 
 							maxlength="5"
 							style="width: 50px; float: right" 
 							placeholder="21" /><br />
@@ -22,14 +59,26 @@
 						<input 
 							type="text" 
 							name="username" 
-							class="text" 
+							class="text
+							<?php if($this -> _['usernameEmpty']) {
+								echo " error";
+							} ?>"
+							<?php if(isset($this -> _['username'])) {
+								echo "value=\"{$this -> _['username']}\"";
+							} ?> 
 							style="width: 230px" 
 							placeholder="Steve Jobs" /><br />
 						<label>Passwort:</label><br />
 						<input 
 							type="password" 
 							name="password" 
-							class="text" 
+							class="text
+							<?php if($this -> _['passwordEmpty']) {
+								echo " error";
+							} ?>"
+							<?php if(isset($this -> _['password'])) {
+								echo "value=\"{$this -> _['password']}\"";
+							} ?> 
 							style="width: 230px" 
 							placeholder="••••••••" />
 						<table>
@@ -46,23 +95,10 @@
 										for="ssl"><?php echo LANG_SSL_LOGIN; ?></label>
 								</td>
 							</tr>
-							<tr style="height: 20px">
-								<td>
-									<input 
-										type="checkbox" 
-										id="anonymous" 
-										name="anonymous" />
-								</td>
-								<td>
-									<label 
-										class="pointer" 
-										for="anonymous"><?php echo LANG_ANONYMOUS_LOGIN; ?></label>
-								</td>
-							</tr>
 						</table>
 						<input 
 							type="submit" 
-							name="submit_ftp" v
+							name="submit_ftp" 
 							value="<?php echo LANG_LOGIN; ?>" />
 					</div>
 				</form>
