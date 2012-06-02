@@ -1,0 +1,101 @@
+/* Allgemeine Styles */
+* {
+	font-size: 14px;
+}
+body {
+	font-family: Tahoma, Verdana, Arial;
+	background: #255c9f url(../images/background.png) repeat-x fixed;
+	font-size: 14px;
+	overflow-y: scroll;
+	padding-bottom: 10px;
+	cursor: default;
+}
+
+/* Link Styles */
+a:hover {
+	text-decoration: none;
+}
+a:visited {
+	color: #000;
+}
+a.href {
+	cursor: pointer;
+}
+
+/* Allgemeine Klassen */
+.right {
+	float: right;
+}
+ 
+.window {
+	width: 600px; 
+	background-color: #dbdbdb; 
+	border-radius: 10px;
+	box-shadow: 0 0 10px #000;
+	text-align: left;	
+	position: relative;
+	margin-top: 150px;
+}
+
+.window .head {
+	height: 35px; 
+	background-color: #f0f0f0; 
+	border-radius: 10px 10px 0 0; 
+	border-bottom: 1px solid #777; 
+	overflow: hidden;
+	position: relative;
+}
+
+.window .head .text {
+	float: left;
+	width: 100%;
+	padding: 6px 0;
+	text-align: center;
+	color: #181818;
+	font-size: 15px;
+}
+
+.window .head .background {
+	position: relative;
+	left: -50px;
+	width: 200%;
+	top: -50px;
+	height: 85px;
+	box-shadow: 0 0 60px #888 inset;
+}
+
+.window .foot {
+	height: 35px; 
+	background-color: #f0f0f0; 
+	border-radius: 0 0 10px 10px; 
+	border-top: 1px solid #777;
+}
+
+.window .mainpart {
+    padding-bottom: 10px;
+}
+
+.window .mainpart ul {
+	padding: 0;
+	margin: 0;
+}
+
+.window .mainpart ul li {
+	list-style-type: none;
+	background-repeat: no-repeat;
+	padding: 4px 0 4px 32px;
+	border-bottom: 1px solid #BBB;
+	cursor: pointer;
+}
+
+.window .mainpart ul li:hover {
+	-webkit-box-shadow: 0 0 5px #000;
+	-moz-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+	background-color: #c8c8c8;
+}
+
+.window .mainpart ul li.directory {
+	background-image: url('../images/directory.png');
+	background-position: 7px 2px;
+}
