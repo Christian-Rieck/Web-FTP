@@ -17,5 +17,8 @@ define("IMAGES", ROOT . "resources" . DS . "images" . DS);
 
 // SQL-Server Parameter
 define("SQL_SERVER", "localhost");
+define("SQL_DATABASE", "database");
+define("SQL_USER", "user");
+define("SQL_PASSWORD", "password");
 
 ?>
