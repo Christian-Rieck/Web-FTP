@@ -7,20 +7,41 @@
 		<div class="mainpart">
 		    <ul>
 		    <?php
+    		    if ($this -> _['currentDir'] != "/") {
+        		    echo "<li class=\"directory\"><div class=\"directoryName\">..</div></li>\n";
+    		    }
                 foreach($this -> _['fileList'] as $file => $value) {
                     echo "<li";
                     if ($value['type'] == "Dir") {
                         echo " class=\"directory\"";
+                        echo "><div class=\"directoryName\">";
+                        echo $file . "</div>";
                     }
-                    echo ">" . $file . "</li>";    
+                    if ($value['type'] == "File") {
+                        echo "><div class=\"fileName\">";
+                        echo $file . "</div>";
+                        echo "<div class=\"fileSize\">" . $value['size'] . "</div>";
+                        echo "<div class=\"clear\"></div>"; 
+                    }
+                    echo "</li>\n";   
                 }
             ?>
 		    </ul>
 		</div>
 	</div>
+	
+<script type="text/javascript">
+$(document).ready(function() {
 
-<pre>
-<p align="left">
-<?php var_dump($this -> _['fileList']); ?>
-</p>
-</pre>
+	$(".directoryName").click(function() {
+	
+		directoryName = $(this).html();		
+		$.get(ROOT + "Ajax/FtpDirectory/&directory=" + directoryName, function(data)
+		{
+			$("#center").hide();
+			$("#center").html(data);
+			$("#center").fadeIn();		
+	    });
+	});
+});
+</script>
