@@ -51,4 +51,4 @@
 				</div>
 			</div>
 		<?php } ?>
-		<center>
+		<center id="center">
