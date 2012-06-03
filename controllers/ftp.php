@@ -4,6 +4,12 @@ class Controller_Ftp extends Controller {
 
 	protected function make() {
 	
+	   if (!isset($_SESSION['id']) &&
+	       !isset($_SESSION['domain'])) {
+			header("Location: " . ROOT . "Login");
+			break;
+		}
+	
     	$ftpConfig = array(
     	    "host"     => $_SESSION['domain'],
     	    "username" => $_SESSION['username'],
@@ -16,6 +22,13 @@ class Controller_Ftp extends Controller {
             $ftp -> connect($ftpConfig, true, true);
         else
             $ftp -> connect($ftpConfig);
+            
+        if (isset($_SESSION['currentDirectory']) &&
+            !empty($_SESSION['currentDirectory'])) {
+            $ftp -> changeDir($_SESSION['currentDirectory']);
+        } else {
+            $_SESSION['currentDirectory'] = $ftp -> getDir();
+        }
         
         $header = new View('header');
         
