@@ -26,6 +26,10 @@ a.href {
 .right {
 	float: right;
 }
+
+.clear {
+    clear: both;
+}
  
 .window {
 	width: 600px; 
@@ -34,7 +38,7 @@ a.href {
 	box-shadow: 0 0 10px #000;
 	text-align: left;	
 	position: relative;
-	margin-top: 150px;
+	margin: 100px 0;
 }
 
 .window .head {
@@ -98,4 +102,15 @@ a.href {
 .window .mainpart ul li.directory {
 	background-image: url('../images/directory.png');
 	background-position: 7px 2px;
+}
+
+.window .mainpart ul li div.fileName {
+	width: 80%;
+	float: left;
+}
+
+.window .mainpart ul li div.fileSize {
+	width: 20%;
+	float: right;
+	color: #aaa;
 }
