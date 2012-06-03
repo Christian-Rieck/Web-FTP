@@ -66,7 +66,7 @@ class Controller_LoginForm extends Controller {
 				} else
 					$view -> assign('domain', $domain);
 					
-				if (!preg_match('/^([a-zA-Z]{2,5}:\/\/)?(www\.)?([a-zA-Z0-9]{3,65})(\.[a-zA-Z]{2,4})$/', $domain) &&
+				if (!preg_match('/^([a-zA-Z]{2,5}:\/\/)?([a-zA-Z\.\-]+)?([a-zA-Z0-9\-]{1,65})(\.[a-zA-Z]{2,4})$/', $domain) &&
 				    !preg_match('#(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)#', $domain)) {
     				$fehler = true;
     				$view -> assign('badDomain', true);
