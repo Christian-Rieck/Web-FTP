@@ -54,6 +54,19 @@ class Controller_Ftp extends Controller {
 									)
 							)
 					)
+				, "file" => array(	
+						"text" => "Ablage"
+						, "content" => array(
+								"newfile" => array(
+										"text" => "<a href=\"#\">Neue Datei</a>"
+										, "content" => null
+									),
+								"newdirectory" => array(
+										"text" => "<a href=\"#\">Neuer Ordner</a>"
+										, "content" => null
+									)
+							)
+					)
 				, "help" => array(	
 						"text" => "Hilfe"
 						, "content" => array(
@@ -67,12 +80,18 @@ class Controller_Ftp extends Controller {
 			
 		$header -> assign("topMenus", $topMenus);
 		        
+        $windowHeader = new View('windowHeader');
+        $windowHeader -> assign('currentDir', $ftp -> getDir());
+        
         $view = new View('ftpFileList');
-        $view -> assign('currentDir', $ftp -> getDir());
         $view -> assign('fileList', $ftp -> getFileList($ftp -> getDir(), 1));
         
+        $windowFooter = new View('windowFooter');
+        
         $this -> layout -> assign('header', $header -> loadTemplate());
+        $this -> layout -> assign('windowHeader', $windowHeader -> loadTemplate());
         $this -> layout -> assign('content', $view -> loadTemplate());
+        $this -> layout -> assign('windowFooter', $windowFooter -> loadTemplate());
 	}
 
 }
