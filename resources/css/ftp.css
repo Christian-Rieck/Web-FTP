@@ -87,7 +87,6 @@ a.href {
 .window .mainpart ul li {
 	list-style-type: none;
 	background-repeat: no-repeat;
-	padding: 4px 0 4px 32px;
 	border-bottom: 1px solid #BBB;
 	cursor: pointer;
 }
@@ -99,18 +98,106 @@ a.href {
 	background-color: #c8c8c8;
 }
 
-.window .mainpart ul li.directory {
+.window .mainpart ul li div.directoryIcon {
+	width: 20px;
+	float: left;
 	background-image: url('../images/directory.png');
-	background-position: 7px 2px;
+	background-repeat: no-repeat;
+	background-position: 0 -2px;
+	margin: 4px;
+}
+
+.window .mainpart ul li div.directoryName {
+    width: 70%;
+    float: left;
+	padding: 4px 0;
 }
 
 .window .mainpart ul li div.fileName {
-	width: 80%;
+	width: 70%;
 	float: left;
+	padding: 4px 0;
 }
 
-.window .mainpart ul li div.fileSize {
+.window .mainpart ul li div.fileTools {
 	width: 20%;
-	float: right;
+	float: left;
 	color: #aaa;
+	padding: 4px 0;
+	text-align: right;
+}
+
+.window .mainpart ul li div.fileTools div.indicator {
+	width: 16px;
+	float: left;
+	background: url('../images/indicator.gif') no-repeat 1px;
+	margin-right: 8px;
+	display: none;
+}
+
+.popover {
+	position: absolute;
+	top: 0; left: 80px;
+	max-width: 240px;
+	max-height: 255px;
+	display: none;
+	background: #000;
+	padding: 5px;
+	opacity: 0.7;
+	border-radius: 8px;
+	border: 1px solid #FFF;
+	word-break: break-all;
+}
+.popover.wider {
+	width: 340px;
+}
+.popover.large {
+	width: 470px;
+	max-height: 350px;
+}
+.popover .arrow, .popover .top-arrow {
+	position: absolute;
+	top: 0; left: 50%;
+	margin: -10px 0 0 -3px;
+	width: 0; height: 0;
+	border-top: 8px solid transparent;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid #000;
+}
+.popover .bottom-arrow {
+	top: 100%; left: 50%;
+	margin: 0 0 0 -3px;
+	border-top: 5px solid #000;
+	border-bottom: 5px solid transparent;
+}
+.popover .left-arrow {
+	top: 50%; left: -10px;
+	margin: -3px 0 0;
+	border-right: 5px solid #000;
+	border-bottom: 5px solid transparent;
+}
+.popover .right-arrow {
+	top: 50%; left: 100%;
+	margin: -6px 0 0;
+	border-left: 8px solid #FFF;
+	border-bottom: 8px solid transparent;
+}
+.popover .right-inner-arrow {
+	top: 50%; left: 100%;
+	margin: -6px 0 0;
+	border-left: 7px solid #000;
+	border-bottom: 7px solid transparent;
+    position:absolute;
+    z-index: 100000;
+}
+.popover .content {
+    overflow: auto;
+	line-height: 1.3em;
+	font-size: 12px;
+	color: #FFF;
+	max-height: 240px;
+}
+.popover.large .content {
+	max-height: 285px;
 }
